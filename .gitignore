@@ -1,0 +1,3 @@
+# The ZIP is attached to a GitHub Release, not committed
+*.zip
+*.sha256
