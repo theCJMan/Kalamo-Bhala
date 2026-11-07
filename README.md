@@ -24,8 +24,9 @@ An internet connection is only needed for the AI features.
 1. **Unzip:** right-click the downloaded ZIP → **Extract All…** → choose a folder (for example `Documents\Kalamo Bhala`).
 2. **Start:** open that folder and double-click **Start Kalamo**.
    If Windows says *"Windows protected your PC"*, click **More info** → **Run anyway** (Kalamo is not signed with a paid certificate).
-3. **Write:** a black window opens (keep it open while you write) and your browser shows Kalamo. Read the notice, click
-   **I understand**, then **New Project**.
+3. **Set up and write:** a black window opens (keep it open while you write) and your browser shows Kalamo. Read the
+   notice and click **I understand**; a short **setup wizard** then helps you import your Raptor Write backup and add your
+   OpenRouter key (with step-by-step help to get one for free).
 
 **➜ The full guide, with pictures: [GUIDE.md](GUIDE.md)**
 

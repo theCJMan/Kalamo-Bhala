@@ -44,7 +44,35 @@ Needs Windows 10 or 11 (64-bit). Chrome or Edge work best. Nothing is installed;
 ![The notice shown at the first start](images/01-notice.png)
 
 Kalamo first shows a short notice. Read it and click **I understand** (**1**). It appears once (and again after an
-update). Then you see the **Projects** page.
+update).
+
+**The setup wizard** then takes you through five short steps (you can also run it later: Settings → *Run the setup
+wizard again…*):
+
+1. **Welcome:** where your writing is kept (the *library folder*, normally `Documents\MyWritings`).
+2. **Raptor Write backups:** *Yes* or *No*.
+
+   ![The setup wizard: importing from Raptor Write](images/19-wizard-raptor.png)
+
+   - **Easiest (1):** choose your Raptor Write **full backup** ZIP. You tick the projects you want; their prompts and
+     model collections come along by themselves, and every document is checked word by word.
+   - **Or separate files (2)**, in this order: **model collections** first (so the prompts stay linked to them), then
+     **prompts**, then each **project export** (.json or .md), one at a time.
+   - **Tip:** Raptor Write's full backup can leave documents out. While Raptor Write is still open, also export each
+     project on its own, import those too, and compare the word counts in the report.
+   - *No* starts blank and can make your first project for you.
+3. **Your OpenRouter key** (for the AI features):
+
+   ![The setup wizard: getting an OpenRouter key](images/20-wizard-key.png)
+
+   - *Yes, I have a key*: paste it and click **Save and test the key**.
+   - *No, not yet*: follow the six steps on screen. **Open OpenRouter.ai** (**1**) opens the key page in a new tab;
+     sign in, **Create Key**, copy it, come back and click **I have my key** (**2**). More detail: [section 6](#6-setting-up-the-ai-openrouter).
+   - You can also skip this and add the key later under **Models → Add key…**.
+4. **Your defaults:** the standard prompts and model collections, the starting model (`openrouter/free`), and any
+   imported models that no longer exist on OpenRouter (choose another model for those). Here you also choose what
+   Kalamo opens when it starts: **the project that was open last time** (normal), the Projects page, or a new project.
+5. **All set:** **Start writing** opens your (first) project.
 
 ## 3. Projects
 
@@ -61,6 +89,8 @@ update). Then you see the **Projects** page.
 ![Creating a new project](images/03-new-project.png)
 
 **New Project** asks for a name (and an optional description). Click **Create project** and the project opens.
+
+When you start Kalamo again it opens **the project you had open last time** (change this in Settings → *Start Kalamo with*).
 
 ## 4. Writing: the binder and the editor
 
@@ -79,6 +109,10 @@ update). Then you see the **Projects** page.
 6. **Chapter pipeline:** the chapter-by-chapter workflow ([section 9](#9-writing-a-book-chapter-by-chapter)).
 7. **Split view:** see another document while you write.
 8. **Word count** of this document (and an estimate of its size for the AI).
+
+**Renaming:** click the document's **name above the editor**, type the new name and press **Enter** (**Escape**
+cancels). In the binder, select a document or folder and press **F2**, click the pencil, or right-click it →
+**Rename…**.
 
 **Markdown** (top right) shows the document exactly as it is stored on disk. Your files are ordinary `.md` files: you
 can also open them in Notepad, Word or Obsidian, and Kalamo notices when they change outside it.
@@ -142,8 +176,10 @@ Make your own with **New collection** (type to search OpenRouter's models; price
 ![The / list in the editor](images/09-slash-list.png)
 
 In your text, type **`/`** at the start of a line (or after a space), or click **AI**. Type to filter (**1**), use the
-arrow keys and **Enter**. The gear next to a prompt opens its settings for this run (what is sent, the model, a preview
-with the estimated cost).
+arrow keys and **Enter**. The gear next to a prompt opens its settings for this run: **Input** (boxes only for the
+variables the prompt uses), **Prompt**, **Model** and **Preview** (exactly what is sent, and the estimated cost).
+On the Model tab, the temperature and length come from the prompt or its collection; an **empty box is not sent**, and
+the model then uses its own default (temperature usually 1.0, length up to the model's limit).
 
 - **Continue** (**Ctrl+0**) writes on from the cursor.
 - **Revise Selection** (**Ctrl+1**) rewrites the selected text the way you ask.
@@ -264,7 +300,8 @@ chat's memory and **default model** (start typing a model name and pick from the
 
 - **Update:** click the power button (Quit), delete the app folder, unzip the new version, start it. Nothing else changes.
 - **Remove:** delete the app folder. Your writing stays in `Documents\MyWritings`.
-- **Stop Kalamo:** the power button at the top right, or close the black window.
+- **Stop Kalamo:** the power button at the top right (**Quit**): it saves, stops Kalamo and closes the tab. Closing
+  the black window also stops it.
 
 ## Troubleshooting
 
