@@ -1,5 +1,17 @@
 # Changes
 
+## 0.63 (November 2026)
+
+- **Tables:** the ▦ button inserts a table; inside it, add or delete rows and columns; Tab moves between cells.
+  Saved as ordinary Markdown tables.
+- **Pictures:** the 🖼 button adds a picture (PNG, JPEG, GIF, WebP or SVG). It is kept in the project's *images* folder
+  and included in backups and whole-project ZIP exports.
+- **Four example projects:** schoolwork (Grade 8), university study (BA Psychology), a novel (*Salt and Signal*) and
+  office documents (*Harbourside Logistics*: a report, meeting notes, a letter, a memo, a proposal). A new install
+  starts with all four; **Examples…** on the Projects page adds one again. Your existing projects are not touched.
+- **New here:** right-click a folder or the project → *New document here…* / *New folder here…*.
+- Saving is more robust on Windows when another program (antivirus, OneDrive) briefly holds a file.
+
 ## 0.54 (November 2026)
 
 - **Mac and Linux:** downloads for Mac (Apple Silicon and Intel) and Linux (x64 and ARM64), with Python included, like

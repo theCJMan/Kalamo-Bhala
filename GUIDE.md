@@ -110,7 +110,7 @@ wizard again…*):
 
 ![The Projects page](images/02-projects.png)
 
-1. **New Project:** start a new book, report or collection.
+1. **New Project:** start a new book, report or collection. **Examples…** adds a ready-made example project.
 2. **Import…:** bring in a Raptor Write backup, a Markdown file, or a Kalamo backup (see [section 10](#10-coming-from-raptor-write)).
    **Import folder…** next to it turns a folder of `.md` / `.txt` files into a project.
 3. **Back up all…:** one ZIP of all your projects (see [section 8](#8-backups-and-exports)).
@@ -121,6 +121,18 @@ wizard again…*):
 ![Creating a new project](images/03-new-project.png)
 
 **New Project** asks for a name (and an optional description). Click **Create project** and the project opens.
+
+**Example projects.** A new install starts with four example projects, so there is something to look around in:
+
+| Example | What it shows |
+| --- | --- |
+| **School, Grade 8** | seven subjects with worksheets; a project folder with a *Research* folder inside |
+| **University, BA Psychology Year 1** | lecture notes and assignments for six modules; a group project |
+| **Novel, *Salt and Signal*** | chapters with scene breaks, characters, a map, a timeline, a story arc |
+| **Work, *Harbourside Logistics*** | a report with figures and a chart, meeting notes, a letter, a memo, a proposal |
+
+Each starts with a *Start here* document. Change them or delete them: deleted examples do not come back, and
+**Examples…** adds one again whenever you like.
 
 When you start Kalamo again it opens **the project you had open last time** (change this in Settings → *Start Kalamo with*).
 
@@ -134,7 +146,8 @@ When you start Kalamo again it opens **the project you had open last time** (cha
    document) or deletes them for good.
 2. **The switch** on each row decides which documents are sent to an AI prompt as background (the
    `{{selected_documents}}` of a prompt). A folder's switch sets everything inside it. The number is the word count.
-3. **Formatting:** bold, italics, strikethrough, headings, lists, quote, scene break, undo/redo, find (magnifier).
+3. **Formatting:** bold, italics, strikethrough, headings, lists, quote, scene break, **table (▦)**, **picture (🖼)**,
+   undo/redo, find (magnifier).
    Keys: **Ctrl+B**, **Ctrl+I**, **Ctrl+Z** (undo), **Ctrl+Y** (redo), **Ctrl+S** (save now).
    Typing `# `, `- ` or `1. ` at the start of a line formats it too.
 4. **Your text.** It is saved by itself a couple of seconds after you stop typing ("Saved" at the top), and a safety
@@ -147,6 +160,17 @@ When you start Kalamo again it opens **the project you had open last time** (cha
 **Renaming:** click the document's **name above the editor**, type the new name and press **Enter** (**Escape**
 cancels). In the binder, select a document or folder and press **F2**, click the pencil, or right-click it →
 **Rename…**.
+
+**Tables.** The **▦** button inserts a table with a header row. Inside a table, buttons appear to add a row or a
+column, or to delete a row, a column or the table; **Tab** moves to the next cell. Tables are saved as ordinary
+Markdown tables, so other Markdown programs show them too.
+
+**Pictures.** The **🖼** button adds a picture (PNG, JPEG, GIF, WebP or SVG) at the cursor. Kalamo copies it into the
+project's *images* folder (not shown in the binder) and the document keeps an ordinary Markdown link to it. Pictures
+are in your backups, and in a ZIP export of a whole project.
+
+**New here.** Right-click a folder or the project name → **New document here…** or **New folder here…** to add it
+right inside that folder.
 
 **Markdown** (top right) shows the document exactly as it is stored on disk. Your files are ordinary `.md` files: you
 can also open them in Notepad, Word or Obsidian, and Kalamo notices when they change outside it.

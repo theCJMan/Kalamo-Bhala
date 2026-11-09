@@ -1,4 +1,4 @@
-# Kalamo Bhala - v0.54
+# Kalamo Bhala - v0.63
 
 **A free writing app for long-form work** (novels, books, reports, articles) that runs on your own computer (Windows, Mac or
 Linux) and opens in your web browser. Your writing is kept as ordinary Markdown files in a folder you choose, so it is never locked in.
@@ -54,7 +54,7 @@ only needed for the AI features and the weekly check for new versions.
 ## What it does
 
 - **Projects, folders and documents** in a binder; drag to reorder; word counts per folder and project.
-- **A clean editor** (bold, italics, headings, lists, scene breaks) on plain Markdown files; autosave; safety copies;
+- **A clean editor** (bold, italics, headings, lists, scene breaks, **tables** and **pictures**) on plain Markdown files; autosave; safety copies;
   **split view** to look something up while you write; **find & replace** across a document, folder or project.
 - **AI with your own OpenRouter key:** your own prompt library (type `/` in the text), Continue / Revise Selection / Go,
   a **chat** that can read your documents, **summaries**, rewriting in **past / present / future tense**.
@@ -62,6 +62,7 @@ only needed for the AI features and the weekly check for new versions.
   its estimated cost before and its actual cost after; nothing is retried behind your back.
 - **A chapter-by-chapter workflow** (the Future Fiction Academy's Narrative Physics Engine): a worksheet wizard, then per
   chapter a plan, a draft, three audits and a final candidate that you accept, with a budget limit.
+- **Four example projects** to look around in: schoolwork, university study, a novel, and office documents (instead of Word).
 - **Raptor Write import:** bring in your Raptor Write backup (projects, prompts, model collections).
 - **Backups and exports:** one-click ZIP backups; export to Markdown, plain text or ZIP.
 
