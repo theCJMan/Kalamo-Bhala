@@ -134,6 +134,11 @@ wizard again…*):
 Each starts with a *Start here* document. Change them or delete them: deleted examples do not come back, and
 **Examples…** adds one again whenever you like.
 
+![The Example projects dialog](images/21-examples.png)
+
+**Examples…** lists the four examples with what is in them; **Add** puts a fresh copy in your library (a second copy
+gets "(2)" after its name).
+
 When you start Kalamo again it opens **the project you had open last time** (change this in Settings → *Start Kalamo with*).
 
 ## 4. Writing: the binder and the editor
@@ -161,13 +166,23 @@ When you start Kalamo again it opens **the project you had open last time** (cha
 cancels). In the binder, select a document or folder and press **F2**, click the pencil, or right-click it →
 **Rename…**.
 
-**Tables.** The **▦** button inserts a table with a header row. Inside a table, buttons appear to add a row or a
-column, or to delete a row, a column or the table; **Tab** moves to the next cell. Tables are saved as ordinary
-Markdown tables, so other Markdown programs show them too.
+**Tables**
 
-**Pictures.** The **🖼** button adds a picture (PNG, JPEG, GIF, WebP or SVG) at the cursor. Kalamo copies it into the
-project's *images* folder (not shown in the binder) and the document keeps an ordinary Markdown link to it. Pictures
-are in your backups, and in a ZIP export of a whole project.
+![A table in the novel example](images/22-table.png)
+
+1. **A table** in your text. Click in a cell to type; **Tab** moves to the next cell.
+2. **The table buttons.** **▦** inserts a new table with a header row. While the cursor is in a table, buttons appear
+   to add a row (**+ Row**) or a column (**+ Col**), or to delete a row, a column or the whole table.
+
+Tables are saved as ordinary Markdown tables, so other Markdown programs show them too.
+
+**Pictures**
+
+![A picture in the novel example](images/23-picture.png)
+
+1. **The 🖼 button** adds a picture (PNG, JPEG, GIF, WebP or SVG) at the cursor.
+2. **The picture** in your text. Kalamo copies it into the project's *images* folder (not shown in the binder) and the
+   document keeps an ordinary Markdown link to it. Pictures are in your backups, and in a ZIP export of a whole project.
 
 **New here.** Right-click a folder or the project name → **New document here…** or **New folder here…** to add it
 right inside that folder.
@@ -195,8 +210,9 @@ project**; **Ctrl+H** jumps to *Replace*. *Replace all* asks first and keeps saf
 
 ![The right-click menu on a folder](images/08-right-click.png)
 
-Right-click a document, a folder or the project name (**1**) to **summarise** it or **rewrite it in the past, present
-or future tense** with AI.
+Right-click a document, a folder or the project name (**1**) to add a document or folder inside it, rename or delete
+it, **summarise** it or **rewrite it in the past, present or future tense** with AI, or **Print…** / **Export to
+PDF…** it (see [section 8](#8-backups-and-exports)).
 
 ## 6. Setting up the AI (OpenRouter)
 
@@ -306,6 +322,10 @@ insert it, or (for tense) replace the original. A safety copy is always made fir
 
 **Export** (binder toolbar) saves a document, a folder or the whole project as one Markdown file, one plain-text file,
 or a ZIP of the `.md` files, in binder order.
+
+**PDF and printing.** In the same dialog, **PDF** and **Print** open your browser's print window with the document,
+folder or project laid out as pages, tables and pictures included. To make a PDF, choose **Save as PDF** as the
+printer. You can also right-click in the binder → **Print…** or **Export to PDF…**, or press **Ctrl+P** in the editor.
 
 Kalamo also keeps automatic safety copies of documents before any AI change, in a hidden `.kalamo\safety` folder
 inside each project.
