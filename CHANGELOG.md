@@ -1,5 +1,13 @@
 # Changes
 
+## 0.53 (November 2026)
+
+- **New versions, automatically:** once a week Kalamo checks whether a new version is out (one small file from GitHub;
+  nothing about you or your writing is sent). A pop-up tells you what is new, with **Download and install**: Kalamo
+  downloads it, checks it, unzips it next to your current folder and **restarts** in the new version in the same tab.
+  Afterwards it offers to delete the old folder. **Remind me next week** hides the pop-up for a week.
+- Settings → *About and reset*: switch the weekly check on or off, or **Check now**.
+
 ## 0.52 (November 2026)
 
 - **Setup wizard** at the first start (and from Settings): import your Raptor Write full backup, or separate collection,

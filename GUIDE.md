@@ -330,7 +330,16 @@ a change is saved at once.
 | Settings and your API key | `%APPDATA%\KalamoBhala\settings.env` |
 | The app | the folder you unzipped |
 
-- **Update:** click the power button (Quit), delete the app folder, unzip the new version, start it. Nothing else changes.
+- **Updates (from 0.53):** once a week Kalamo checks GitHub for a new version. It downloads one small file; nothing
+  about you or your writing is sent (GitHub sees your internet address, as with any website, and counts the download).
+  When a new version is out, a pop-up says what is new:
+  - **Download and install:** Kalamo downloads the new version, checks it (SHA-256) and unzips it next to your current
+    folder, then offers **Restart now**: the same browser tab reopens in the new version. At the next start Kalamo offers
+    to delete the old version's folder (only if it holds nothing but Kalamo's own files).
+  - **Remind me next week:** no pop-up for a week. The **New version** button at the top keeps it within reach.
+  - Switch the weekly check off, or **Check now**, in Settings → *About and reset*.
+- **Update by hand** (and from 0.51 or 0.52): click the power button (Quit), delete the app folder, unzip the new
+  version, start it. Nothing else changes.
 - **Remove:** delete the app folder. Your writing stays in `Documents\MyWritings`.
 - **Stop Kalamo:** the power button at the top right (**Quit**): it saves, stops Kalamo and closes the tab. Closing
   the black window also stops it.
