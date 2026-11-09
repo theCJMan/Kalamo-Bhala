@@ -1,4 +1,4 @@
-# Kalamo Bhala
+# Kalamo Bhala - v0.53
 
 **A free writing app for long-form work** (novels, books, reports, articles) that runs on your own Windows PC and opens
 in your web browser. Your writing is kept as ordinary Markdown files in a folder you choose, so it is never locked in.
