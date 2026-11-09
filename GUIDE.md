@@ -302,6 +302,12 @@ The three standard prompts cannot be edited (duplicate one to make your own), bu
 document, folder or project, or **`{{`** to include text from the open document. **Insert in document** puts a reply in
 your text. Chats are saved by themselves; **Dock right** puts the chat beside your text.
 
+**Search the open project** (the switch under the message box) lets the chat answer from your project without
+sending all of it. Kalamo searches the project on your PC (a word search: free, nothing is sent for the search) and
+sends only the few passages that share words with your message, at most about 1,500 words. Under your message,
+*Project search* shows which passages went; click it to read them. It finds words, not meaning: ask with the words
+your text uses (*"What colour was the wax on the bottle?"*), or add whole documents with **`@`**.
+
 **Summaries and tense**
 
 ![The Summarise dialog](images/15-summarise.png)
