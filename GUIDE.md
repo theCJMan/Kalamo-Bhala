@@ -66,9 +66,11 @@ wizard again…*):
    ![The setup wizard: getting an OpenRouter key](images/20-wizard-key.png)
 
    - *Yes, I have a key*: paste it and click **Save and test the key**.
-   - *No, not yet*: follow the six steps on screen. **Open OpenRouter.ai** (**1**) opens the key page in a new tab;
+   - *No, not yet*: the easiest way is **Sign in with OpenRouter…**: OpenRouter opens in a new tab; sign in (or make a
+     free account), click **Authorize**, and OpenRouter makes a key for Kalamo. Nothing to copy or paste.
+   - Or make a key yourself with the six steps on screen: **Open OpenRouter.ai** (**1**) opens the key page in a new tab;
      sign in, **Create Key**, copy it, come back and click **I have my key** (**2**). More detail: [section 6](#6-setting-up-the-ai-openrouter).
-   - You can also skip this and add the key later under **Models → Add key…**.
+   - You can also skip this and add the key later under **Settings → API keys**.
 4. **Your defaults:** the standard prompts and model collections, the starting model (`openrouter/free`), and any
    imported models that no longer exist on OpenRouter (choose another model for those). Here you also choose what
    Kalamo opens when it starts: **the project that was open last time** (normal), the Projects page, or a new project.
@@ -83,8 +85,8 @@ wizard again…*):
    **Import folder…** next to it turns a folder of `.md` / `.txt` files into a project.
 3. **Back up all…:** one ZIP of all your projects (see [section 8](#8-backups-and-exports)).
 4. **A project:** click its name to open it. The small icons on the right back it up, copy it, rename it or delete it
-   (deleted projects go to a trash folder, not off the disk).
-5. **Settings** (the gear icon): library folder, colours, text size and more ([section 11](#11-settings)).
+   (deleted projects go to the trash, not off the disk: **Trash…** shows them and can restore them).
+5. **Settings** (the gear icon): library folder, colours, text size, API keys and more ([section 11](#11-settings)).
 
 ![Creating a new project](images/03-new-project.png)
 
@@ -97,7 +99,9 @@ When you start Kalamo again it opens **the project you had open last time** (cha
 ![The binder and the editor](images/05-workspace.png)
 
 1. **The binder toolbar:** new document, new folder, import files, import a folder, export, back up this project,
-   rename (F2), delete, hide the binder. **Drag** documents and folders to move or reorder them.
+   rename (F2), delete, hide the binder. **Drag** documents and folders to move or reorder them. Deleted documents go
+   to the project's trash: **Trash…** at the bottom of the binder shows them, restores them (never over another
+   document) or deletes them for good.
 2. **The switch** on each row decides which documents are sent to an AI prompt as background (the
    `{{selected_documents}}` of a prompt). A folder's switch sets everything inside it. The number is the word count.
 3. **Formatting:** bold, italics, strikethrough, headings, lists, quote, scene break, undo/redo, find (magnifier).
@@ -145,13 +149,25 @@ or future tense** with AI.
 Kalamo's AI features use **OpenRouter**, one account that gives access to hundreds of models (Claude, GPT, Gemini,
 Grok, Mistral, DeepSeek and many free ones).
 
+**The easy way:** open **Settings** (the gear) → **API keys** and click **Sign in with OpenRouter…**. OpenRouter opens
+in a new tab: sign in (or sign up, free), click **Authorize**, and OpenRouter makes a key called *Kalamo Bhala*, which
+Kalamo saves for you. Come back to Kalamo; the box closes by itself.
+
+**Or by hand:**
+
 1. Go to **[openrouter.ai](https://openrouter.ai)** and sign up (free).
 2. Open **Keys** (in your account menu) and click **Create Key**. Give it a name such as *Kalamo*.
-   **Tip:** set a **credit limit** on the key (for example $5): it is the best safety net against surprises.
 3. Copy the key (it starts with `sk-or-`).
-4. In Kalamo, click **Models** (top bar) → **Add key…**, paste the key and click **Save key**. **Test key** checks it.
-   The key is kept in Kalamo's settings file on your PC only: never in your writing, backups or exports.
-5. To use paid models later, add credit at OpenRouter (**Credits**). The free models need no credit.
+4. In Kalamo, open **Settings → API keys** → **Paste a key…** on the OpenRouter row, paste it and click **Save key**.
+   **Test** checks it.
+
+Either way: the key is kept in Kalamo's settings file on your PC only, never in your writing, backups or exports.
+**Tip:** set a **credit limit** on the key at openrouter.ai → Keys (for example $5): it is the best safety net against
+surprises. To use paid models later, add credit at OpenRouter (**Credits**). The free models need no credit.
+
+**Other providers (optional):** Settings → API keys also takes keys for **OpenAI**, **Anthropic (Claude)**, **Google
+(Gemini)** and **xAI (Grok)**. With such a key you can choose that provider when you add a model to a collection, and
+pay it directly instead of through OpenRouter. The cost Kalamo shows for these is an estimate from the tokens used.
 
 **Model collections**
 
@@ -181,10 +197,15 @@ variables the prompt uses), **Prompt**, **Model** and **Preview** (exactly what 
 On the Model tab, the temperature and length come from the prompt or its collection; an **empty box is not sent**, and
 the model then uses its own default (temperature usually 1.0, length up to the model's limit).
 
-- **Continue** (**Ctrl+0**) writes on from the cursor.
-- **Revise Selection** (**Ctrl+1**) rewrites the selected text the way you ask.
-- **Go** (**Ctrl+2**) sends your background documents and the text so far, with no instruction.
-- Your own prompts get **Ctrl+3** and up. **Ctrl+\\** runs the last prompt again.
+- **Continue** (**Ctrl+0**) writes on from the cursor in your voice (a few paragraphs). Notes in `[square brackets]`
+  in your text are read as instructions and not copied. In the middle of a chapter it also reads the text after the
+  cursor, so the new part leads into it.
+- **Revise Selection** (**Ctrl+1**) rewrites the selected text the way you ask (or, with no instructions, tightens it
+  and fixes the grammar without adding anything).
+- **Go** (**Ctrl+2**) sends your background documents and the text so far, with no instruction: end your text with
+  a request (for example `[Give me five names for the boat]`) and Go answers it.
+- Select some text and the prompts that use it appear in a small bar under the selection (Settings can switch this off).
+- Your own prompts get **Ctrl+3** and up; you can choose each prompt's key in its settings. **Ctrl+\\** runs the last prompt again.
 
 **The reply**
 
@@ -281,13 +302,24 @@ once, then write each chapter in steps. **You stay in control: nothing becomes p
 
 ![Settings](images/04-settings.png)
 
-The gear (top right) holds: the **library folder** (where your projects live), the **colour scheme** and **interface
-size** (up to 200%), autosave and safety-copy timing, **spell check** and its language, the order of the `/` list, the
-chat's memory and **default model** (start typing a model name and pick from the list), and the **backup folder**.
+The gear (top right) opens Settings: the groups are on the left, their settings on the right. There is no Save button:
+a change is saved at once.
+
+- **Start and folders:** what Kalamo opens with, the **library folder** and the **backup folder**. **Browse…** picks a
+  folder; you can also type a path.
+- **Appearance:** the **colour scheme** (Walnut, Sand, Dark, Light, Follow the system, High contrast, Forest, Lavender,
+  Sky) and the **interface size** (up to 200%).
+- **Writing and saving:** autosave and safety-copy timing.
+- **Spelling:** spell check on or off, and its language.
+- **AI, prompts and chat:** the order of the `/` list, the prompts shown under a selection, the chat's default model
+  and memory.
+- **API keys:** OpenRouter (sign in or paste a key) and, if you want them, OpenAI, Anthropic, Google and xAI.
+- **About and reset:** the version, the setup wizard again, and **Reset to defaults** (your folders, keys, prompts
+  and writing are kept).
 
 > [!TIP]
-> **Spell check in another language:** Chrome needs that language's dictionary once. Type `chrome://settings/languages`
-> in the address bar, add the language, and switch on spell check for it.
+> **Spell check in another language:** your browser needs that language's dictionary once. In Settings → Spelling,
+> **Show me** opens Chrome's (or Edge's) language settings: add the language and switch on spell check for it.
 
 ## 12. Where your files are, updating, removing
 
@@ -312,7 +344,7 @@ chat's memory and **default model** (start typing a model name and pick from the
 | The browser did not open | Open your browser and go to **http://127.0.0.1:8765**. |
 | "Cannot reach Kalamo Bhala" in the browser | The black window was closed. Double-click **Start Kalamo** again. |
 | It opened on another address (8766…) | Another program used port 8765; Kalamo took the next free one. That is fine. |
-| The AI says the key is missing or wrong | **Models** → **Add key…** / **Test key**. Check the key at openrouter.ai → Keys. |
+| The AI says the key is missing or wrong | **Settings → API keys**: **Sign in with OpenRouter…** or **Paste a key…**, then **Test**. Check the key at openrouter.ai → Keys. |
 | A free model fails or is very slow | Free models are limited and busy at times. Try again later, or choose another model. At openrouter.ai → Settings → Privacy, free models may need to be allowed. |
 | "Insufficient credits" | Add credit at openrouter.ai → Credits, or use a free model. |
 | A document changed outside Kalamo | Kalamo reloads it, or (if you had unsaved changes) asks which version to keep. |
