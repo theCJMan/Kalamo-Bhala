@@ -26,6 +26,12 @@ match the numbered lists under them. The pictures use a made-up demo book, *The 
 
 ## 1. Download and start
 
+Kalamo runs on Windows, Mac and Linux. The pictures in this guide come from Windows; the Mac and Linux versions look
+the same inside the browser. **Mac and Linux are new in 0.54:** they pass every automated test on real machines, but
+no writer has used them yet.
+
+### Windows
+
 1. Go to the **[Releases page](../../releases/latest)** and click **`Kalamo-Bhala-<version>-Windows.zip`** under *Assets*.
    It is about 14 MB.
 2. Open your **Downloads** folder, **right-click** the ZIP and choose **Extract All…**.
@@ -37,7 +43,31 @@ match the numbered lists under them. The pictures use a made-up demo book, *The 
 5. A **black window** opens. That is Kalamo's engine: **keep it open while you write** (you can minimise it).
    Your browser then opens Kalamo by itself. If it does not, open your browser and go to **http://127.0.0.1:8765**.
 
-Needs Windows 10 or 11 (64-bit). Chrome or Edge work best. Nothing is installed; Python is included in the `python` folder.
+Needs Windows 10 or 11 (64-bit). Nothing is installed; Python is included in the `python` folder.
+
+### Mac
+
+1. On the **[Releases page](../../releases/latest)** download **`…-Mac-AppleSilicon.zip`** (M1 and later) or
+   **`…-Mac-Intel.zip`** (older Macs; Apple menu → About This Mac shows which you have).
+2. Double-click the ZIP and move the **Kalamo Bhala** folder somewhere you will find again, for example Documents.
+3. Open the folder and double-click **Start Kalamo.command**.
+4. **The first time macOS refuses**, because Kalamo is not signed by Apple: click **Done**, open **System Settings →
+   Privacy & Security**, scroll down and click **Open Anyway** next to "Start Kalamo.command" (confirm with your
+   password), then double-click it again and click **Open**. Only once.
+5. A **Terminal** window opens: keep it open while you write. Your browser opens Kalamo.
+6. Kalamo's shortcuts use the **Control** key on a Mac (Ctrl+0 … Ctrl+9 run prompts, because Cmd+1 … Cmd+9 switch
+   browser tabs); Cmd+S, Cmd+F and Cmd+Z work as usual.
+
+### Linux
+
+1. On the **[Releases page](../../releases/latest)** download **`…-Linux-x64.tar.gz`** (most PCs) or
+   **`…-Linux-ARM64.tar.gz`** (ARM, for example a Raspberry Pi 4/5 with a 64-bit system).
+2. Unpack it: `tar -xzf Kalamo-Bhala-<version>-Linux-x64.tar.gz` (or "Extract Here" in your file manager).
+3. In a terminal: `cd "Kalamo Bhala <version>"` and `./start-kalamo.sh`. Keep the terminal open while you write.
+4. Needs a desktop Linux from about 2018 or later (not Alpine).
+
+**Which browser?** Kalamo opens in your own default browser. Chrome, Edge, Brave, Vivaldi and Opera are tested the
+most; Safari and Firefox should work but are not tested yet.
 
 ## 2. The first start
 
@@ -319,16 +349,16 @@ a change is saved at once.
 
 > [!TIP]
 > **Spell check in another language:** your browser needs that language's dictionary once. In Settings → Spelling,
-> **Show me** opens Chrome's (or Edge's) language settings: add the language and switch on spell check for it.
+> **Show me** opens your browser's language settings (Chrome, Edge, Brave, Vivaldi, Opera), or explains where they are (Firefox, Safari): add the language and switch on spell check for it.
 
 ## 12. Where your files are, updating, removing
 
 | What | Where |
 | --- | --- |
-| Your writing | `Documents\MyWritings` (one folder per project; change it in Settings) |
-| Backups | `Documents\KalamoBackups` |
-| Settings and your API key | `%APPDATA%\KalamoBhala\settings.env` |
-| The app | the folder you unzipped |
+| Your writing | `Documents/MyWritings` in your home folder (one folder per project; change it in Settings) |
+| Backups | `Documents/KalamoBackups` |
+| Settings and your API keys | Windows: `%APPDATA%\KalamoBhala\settings.env`; Mac: `~/Library/Application Support/KalamoBhala/settings.env`; Linux: `~/.config/KalamoBhala/settings.env` |
+| The app | the folder you unpacked |
 
 - **Updates (from 0.53):** once a week Kalamo checks GitHub for a new version. It downloads one small file; nothing
   about you or your writing is sent (GitHub sees your internet address, as with any website, and counts the download).
@@ -338,20 +368,22 @@ a change is saved at once.
     to delete the old version's folder (only if it holds nothing but Kalamo's own files).
   - **Remind me next week:** no pop-up for a week. The **New version** button at the top keeps it within reach.
   - Switch the weekly check off, or **Check now**, in Settings → *About and reset*.
-- **Update by hand** (and from 0.51 or 0.52): click the power button (Quit), delete the app folder, unzip the new
-  version, start it. Nothing else changes.
-- **Remove:** delete the app folder. Your writing stays in `Documents\MyWritings`.
+- **Update by hand** (and from 0.51 or 0.52): click the power button (Quit), unpack the new version, start it, and
+  delete the old folder. Nothing else changes.
+- **Remove:** delete the app folder. Your writing stays in `Documents/MyWritings`.
 - **Stop Kalamo:** the power button at the top right (**Quit**): it saves, stops Kalamo and closes the tab. Closing
-  the black window also stops it.
+  the black (Terminal) window also stops it.
 
 ## Troubleshooting
 
 | Problem | What to do |
 | --- | --- |
 | "Windows protected your PC" | Click **More info** → **Run anyway**. |
+| Mac: "Start Kalamo.command cannot be opened" | System Settings → Privacy & Security → **Open Anyway** (once). See [Mac](#mac). |
+| Linux: "Permission denied" for start-kalamo.sh | Unpack with `tar -xzf` (keeps the permissions), or run `chmod +x start-kalamo.sh` once. |
 | My antivirus complains | Kalamo is new and unsigned; some antivirus programs are wary of new files. You can check the download against the SHA-256 file on the Releases page. |
 | The browser did not open | Open your browser and go to **http://127.0.0.1:8765**. |
-| "Cannot reach Kalamo Bhala" in the browser | The black window was closed. Double-click **Start Kalamo** again. |
+| "Cannot reach Kalamo Bhala" in the browser | The black (Terminal) window was closed. Start Kalamo again. |
 | It opened on another address (8766…) | Another program used port 8765; Kalamo took the next free one. That is fine. |
 | The AI says the key is missing or wrong | **Settings → API keys**: **Sign in with OpenRouter…** or **Paste a key…**, then **Test**. Check the key at openrouter.ai → Keys. |
 | A free model fails or is very slow | Free models are limited and busy at times. Try again later, or choose another model. At openrouter.ai → Settings → Privacy, free models may need to be allowed. |

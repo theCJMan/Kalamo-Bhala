@@ -1,7 +1,7 @@
-# Kalamo Bhala - v0.53
+# Kalamo Bhala - v0.54
 
-**A free writing app for long-form work** (novels, books, reports, articles) that runs on your own Windows PC and opens
-in your web browser. Your writing is kept as ordinary Markdown files in a folder you choose, so it is never locked in.
+**A free writing app for long-form work** (novels, books, reports, articles) that runs on your own computer (Windows, Mac or
+Linux) and opens in your web browser. Your writing is kept as ordinary Markdown files in a folder you choose, so it is never locked in.
 AI help (continue, revise, chat, summaries, a chapter-by-chapter workflow) works through [OpenRouter](https://openrouter.ai),
 including free models.
 
@@ -14,19 +14,40 @@ including free models.
 
 ## Download
 
-**[⬇ Download the latest version](../../releases/latest)** (the file `Kalamo-Bhala-<version>-Windows.zip`, about 14 MB).
+**[⬇ Download the latest version](../../releases/latest)** and pick the file for your computer under *Assets*:
 
-Needs: Windows 10 or 11 (64-bit) and a browser (Chrome or Edge work best). Nothing else: Python is included.
-An internet connection is only needed for the AI features.
+| Your computer | File |
+| --- | --- |
+| Windows 10 or 11 (64-bit) | `Kalamo-Bhala-<version>-Windows.zip` (about 14 MB) |
+| Mac with Apple Silicon (M1 and later) | `Kalamo-Bhala-<version>-Mac-AppleSilicon.zip` (about 29 MB) |
+| Mac with an Intel processor | `Kalamo-Bhala-<version>-Mac-Intel.zip` (about 29 MB) |
+| Linux, most PCs (x64) | `Kalamo-Bhala-<version>-Linux-x64.tar.gz` (about 39 MB) |
+| Linux on ARM (for example a Raspberry Pi 4/5, 64-bit) | `Kalamo-Bhala-<version>-Linux-ARM64.tar.gz` (about 32 MB) |
+
+Nothing else is needed: Python is included, and Kalamo opens in your own default browser. An internet connection is
+only needed for the AI features and the weekly check for new versions.
+
+> [!NOTE]
+> **Mac and Linux are new in 0.54.** They pass every automated test on real Mac and Linux machines (GitHub's), but no
+> writer has used them yet. Please [tell us](../../issues) how it goes. The Mac download is not signed by Apple, so
+> macOS asks you to allow it once (see step 2).
 
 ## Start in three steps
 
-1. **Unzip:** right-click the downloaded ZIP → **Extract All…** → choose a folder (for example `Documents\Kalamo Bhala`).
-2. **Start:** open that folder and double-click **Start Kalamo**.
-   If Windows says *"Windows protected your PC"*, click **More info** → **Run anyway** (Kalamo is not signed with a paid certificate).
-3. **Set up and write:** a black window opens (keep it open while you write) and your browser shows Kalamo. Read the
-   notice and click **I understand**; a short **setup wizard** then helps you import your Raptor Write backup and add your
-   OpenRouter key (with step-by-step help to get one for free).
+1. **Unpack:**
+   - **Windows:** right-click the ZIP → **Extract All…** → choose a folder (for example `Documents\Kalamo Bhala`).
+   - **Mac:** double-click the ZIP and move the folder somewhere you like (for example Documents).
+   - **Linux:** `tar -xzf Kalamo-Bhala-<version>-Linux-x64.tar.gz` (or "Extract Here" in your file manager).
+2. **Start:**
+   - **Windows:** double-click **Start Kalamo**. If Windows says *"Windows protected your PC"*, click **More info** →
+     **Run anyway** (Kalamo is not signed with a paid certificate).
+   - **Mac:** double-click **Start Kalamo.command**. The first time macOS refuses: click **Done**, open **System
+     Settings → Privacy & Security**, click **Open Anyway** next to "Start Kalamo.command", then double-click it again
+     and click **Open**. Only once.
+   - **Linux:** in a terminal, `cd "Kalamo Bhala <version>"` and `./start-kalamo.sh`.
+3. **Set up and write:** a console (Terminal) window opens (keep it open while you write) and your browser shows
+   Kalamo. Read the notice and click **I understand**; a short **setup wizard** then helps you import your Raptor Write
+   backup and add your OpenRouter key (one click with **Sign in with OpenRouter**).
 
 **➜ The full guide, with pictures: [GUIDE.md](GUIDE.md)**
 
@@ -46,8 +67,10 @@ An internet connection is only needed for the AI features.
 
 ## Updating and removing
 
-- **Update:** quit Kalamo, delete its folder, unzip the new version. Your writing (`Documents\MyWritings`), settings
-  and API key are kept, because they are not in that folder.
+- **Update:** once a week Kalamo checks for a new version. When there is one, a pop-up offers **Download and install**:
+  Kalamo downloads it, checks it, unpacks it next to your current folder and restarts in the new version; then it
+  offers to delete the old folder. Your writing (`Documents/MyWritings`), settings and API keys are kept, because they
+  are not in Kalamo's folder. (Versions before 0.53 update by hand: quit, unpack the new version, start it.)
 - **Remove:** delete the folder. Your writing stays where it is.
 
 ## Questions and problems

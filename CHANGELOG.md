@@ -1,5 +1,13 @@
 # Changes
 
+## 0.54 (November 2026)
+
+- **Mac and Linux:** downloads for Mac (Apple Silicon and Intel) and Linux (x64 and ARM64), with Python included, like
+  the Windows one. They pass every automated test on real Mac and Linux machines; no writer has used them yet.
+- **Updates on every system:** the weekly check and **Download and install** now work on Mac and Linux too.
+- **Your own browser:** Kalamo opens in your default browser, whichever it is (it no longer picks Chrome or Edge for
+  you). Brave, Vivaldi and Opera are recognised, and Spelling → **Show me** opens their own language settings.
+
 ## 0.53 (November 2026)
 
 - **New versions, automatically:** once a week Kalamo checks whether a new version is out (one small file from GitHub;
