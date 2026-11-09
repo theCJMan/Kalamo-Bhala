@@ -4,7 +4,8 @@
 
 - **Mac and Linux:** downloads for Mac (Apple Silicon and Intel) and Linux (x64 and ARM64), with Python included, like
   the Windows one. They pass every automated test on real Mac and Linux machines; no writer has used them yet.
-- **Updates on every system:** the weekly check and **Download and install** now work on Mac and Linux too.
+- **Updates:** the weekly check works on every system; **Download and install** now works on Mac too. On Linux the
+  pop-up opens the download page for now (one-click install there follows once it has been tested on Linux).
 - **Your own browser:** Kalamo opens in your default browser, whichever it is (it no longer picks Chrome or Edge for
   you). Brave, Vivaldi and Opera are recognised, and Spelling → **Show me** opens their own language settings.
 

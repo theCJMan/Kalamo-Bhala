@@ -67,7 +67,8 @@ only needed for the AI features and the weekly check for new versions.
 
 ## Updating and removing
 
-- **Update:** once a week Kalamo checks for a new version. When there is one, a pop-up offers **Download and install**:
+- **Update:** once a week Kalamo checks for a new version. When there is one, a pop-up offers **Download and install**
+  (Windows and Mac; on Linux it opens the download page for now):
   Kalamo downloads it, checks it, unpacks it next to your current folder and restarts in the new version; then it
   offers to delete the old folder. Your writing (`Documents/MyWritings`), settings and API keys are kept, because they
   are not in Kalamo's folder. (Versions before 0.53 update by hand: quit, unpack the new version, start it.)

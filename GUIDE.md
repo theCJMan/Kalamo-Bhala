@@ -363,7 +363,8 @@ a change is saved at once.
 - **Updates (from 0.53):** once a week Kalamo checks GitHub for a new version. It downloads one small file; nothing
   about you or your writing is sent (GitHub sees your internet address, as with any website, and counts the download).
   When a new version is out, a pop-up says what is new:
-  - **Download and install:** Kalamo downloads the new version, checks it (SHA-256) and unzips it next to your current
+  - **Download and install** (Windows and Mac; on Linux the pop-up opens the download page for now): Kalamo downloads
+    the new version, checks it (SHA-256) and unzips it next to your current
     folder, then offers **Restart now**: the same browser tab reopens in the new version. At the next start Kalamo offers
     to delete the old version's folder (only if it holds nothing but Kalamo's own files).
   - **Remind me next week:** no pop-up for a week. The **New version** button at the top keeps it within reach.
