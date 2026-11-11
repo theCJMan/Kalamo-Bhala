@@ -1,3 +1,6 @@
 # The ZIP is attached to a GitHub Release, not committed
 *.zip
 *.sha256
+
+# Claude Code may save approved commands (and any secret typed in them) here; never commit it
+**/.claude/settings.local.json
