@@ -452,6 +452,7 @@ Kalamo uses your browser's own spell check, so the browser must have your langua
 | Problem | What to do |
 | --- | --- |
 | "Windows protected your PC" | Click **More info** → **Run anyway**. |
+| "Smart App Control blocked…" (no "Run anyway" button) | Right-click the downloaded `.zip` → **Properties** → tick **Unblock** → **OK** *before* extracting. If Smart App Control still blocks `Start Kalamo.bat`, open the unpacked folder in Terminal (right-click empty space → **Open in Terminal**) and run `.\python\python.exe -m kalamo`. |
 | Mac: "Start Kalamo.command cannot be opened" | System Settings → Privacy & Security → **Open Anyway** (once). See [Mac](#mac). |
 | Linux: "Permission denied" for start-kalamo.sh | Unpack with `tar -xzf` (keeps the permissions), or run `chmod +x start-kalamo.sh` once. |
 | My antivirus complains | Kalamo is new and unsigned; some antivirus programs are wary of new files. You can check the download against the SHA-256 file on the Releases page. |

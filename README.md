@@ -18,15 +18,26 @@ You don't need to know anything about GitHub. This page is just where Kalamo is 
 
 **Step 2. Find the file.** Open **File Explorer** (the yellow folder on the taskbar) and click **Downloads** on the left. The file is called `Kalamo-Bhala-Windows.zip` (or `Kalamo-Bhala-0.70-Windows.zip`). (In Chrome or Edge you can also click the download arrow at the top right and then the folder icon.)
 
-**Step 3. Unpack it.** Right-click the ZIP → **Extract All…** → **Browse…** and choose your **Documents** folder → **Extract**. Windows makes a folder called `Kalamo Bhala 0.70` and opens it. Don't start Kalamo from inside the ZIP without unpacking it: it will not work properly.
+**Step 3. Unblock the ZIP before unpacking (recommended on Windows 11).** Right-click the ZIP file → **Properties** → at the bottom next to *Security*, tick **Unblock** → click **OK**. *(Windows marks downloaded ZIP files as coming from the internet; unblocking first clears that tag from the files inside.)*
 
-**Step 4. Start Kalamo.** In the new folder, double-click **Start Kalamo**.
+![Right-click the ZIP and choose Properties](images/24-zip-properties.png) ![Tick Unblock in Properties and click OK](images/25-zip-unblock.png)
 
-**Step 5. Only the first time: "Windows protected your PC".** Kalamo is not signed with a paid certificate, so Windows warns you once. Click **More info**, then **Run anyway**.
+**Step 4. Unpack it.** Right-click the ZIP → **Extract All…** → **Browse…** and choose your **Documents** folder → **Extract**. Windows makes a folder called `Kalamo Bhala 0.70` and opens it. Don't start Kalamo from inside the ZIP without unpacking it: it will not work properly.
 
-**Step 6. Keep the black window open.** A black window (the console) opens; it *is* Kalamo running. Leave it open while you write; you can minimise it. Your web browser then opens Kalamo by itself. (If it doesn't, open your browser and go to `http://127.0.0.1:8765/`.)
+**Step 5. Start Kalamo.** In the new folder, double-click **Start Kalamo**.
 
-**Step 7. Read the notice, then choose: guided setup or not.** Click **I understand**. Kalamo asks whether you want a short guided setup (about 5 minutes): it explains everything, including how to connect a free AI account. Choose **No thanks** if you prefer to look around yourself; the setup is in Settings whenever you want it.
+**Step 6. Only the first time, if Windows blocks `Start Kalamo`:**
+- **If you see "Windows protected your PC" (SmartScreen):** click **More info**, then **Run anyway**. *(Kalamo is not signed with a paid certificate, so Windows warns you once.)*
+- **If you see "Smart App Control blocked…" (no "Run anyway" button):**
+  1. Make sure you ticked **Unblock** on the ZIP *before* unpacking (Step 3). If you unpacked it first, delete the unpacked folder, Unblock the ZIP, and Extract All again.
+  2. If Smart App Control still blocks `.bat` script files on your PC, start Kalamo directly with the signed Python inside the folder: open the `Kalamo Bhala 0.70` folder, right-click empty space inside the folder → **Open in Terminal**, and run:
+     ```powershell
+     .\python\python.exe -m kalamo
+     ```
+
+**Step 7. Keep the black window open.** A black window (the console) opens; it *is* Kalamo running. Leave it open while you write; you can minimise it. Your web browser then opens Kalamo by itself. (If it doesn't, open your browser and go to `http://127.0.0.1:8765/`.)
+
+**Step 8. Read the notice, then choose: guided setup or not.** Click **I understand**. Kalamo asks whether you want a short guided setup (about 5 minutes): it explains everything, including how to connect a free AI account. Choose **No thanks** if you prefer to look around yourself; the setup is in Settings whenever you want it.
 
 **Next time:** open the folder and double-click **Start Kalamo** again, or use **Settings → Start and folders → Create a desktop shortcut** for an icon on your desktop and Start menu.
 **To stop Kalamo:** click the power button at the top right in Kalamo (or close the black window).
@@ -43,7 +54,7 @@ Intel Mac: **[⬇ Mac (Intel)](../../releases/latest/download/Kalamo-Bhala-Mac-I
 
 **Step 4. Only the first time.** macOS refuses because the download is not signed by Apple: click **Done**. Open **System Settings → Privacy & Security**, scroll down and click **Open Anyway** next to "Start Kalamo.command". Double-click it again and click **Open**.
 
-**Step 5. Keep the Terminal window open.** Your browser opens Kalamo. Then continue at Windows step 7.
+**Step 5. Keep the Terminal window open.** Your browser opens Kalamo. Then continue at Windows step 8.
 
 </details>
 
@@ -54,7 +65,7 @@ Intel Mac: **[⬇ Mac (Intel)](../../releases/latest/download/Kalamo-Bhala-Mac-I
 
 **Step 2. Unpack it.** Right-click → **Extract Here**, or in a terminal: `tar -xzf Kalamo-Bhala-Linux-x64.tar.gz`.
 
-**Step 3. Start Kalamo.** In a terminal: `cd "Kalamo Bhala 0.70"` and `./start-kalamo.sh` (you can also run `./create-shortcut.sh` for an app menu / desktop icon). Keep the terminal open; your browser opens Kalamo. Then continue at Windows step 7.
+**Step 3. Start Kalamo.** In a terminal: `cd "Kalamo Bhala 0.70"` and `./start-kalamo.sh` (you can also run `./create-shortcut.sh` for an app menu / desktop icon). Keep the terminal open; your browser opens Kalamo. Then continue at Windows step 8.
 
 </details>
 
