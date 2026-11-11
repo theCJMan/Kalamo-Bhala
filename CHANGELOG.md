@@ -1,5 +1,55 @@
 # Changes
 
+## 0.70 (November 2026)
+
+- **Import more files:** drag almost any document onto the binder or use Import… on the Projects page.
+  PDF (free reader on your computer; scanned pages or every page read by an AI model with a word check),
+  Word (.docx), old Word (.doc, Word 97–2003), PowerPoint (.pptx: one document per slide or one document;
+  titles, bullet points, tables, pictures, speaker notes), OpenDocument text (.odt), OpenDocument slides (.odp),
+  Excel (.xlsx), OpenDocument spreadsheet (.ods), saved web pages (.html), Rich Text (.rtf),
+  photos of notes (.jpg / .png / .webp), and iPhone photos (.heic).
+  One document or one per heading/slide/sheet — your choice; originals kept and openable from the right-click menu.
+  **Stop** keeps the pages already read; **Carry on importing** resumes a stopped PDF from the next page;
+  **PDF page range**; imports run in the background — several at once, while you keep writing.
+- **Export to Word and OpenDocument:** export a document, folder or project as **.docx** or **.odt**.
+  Normal or manuscript layout (double-spaced, indented first lines, scene breaks, header with your name and page number),
+  font choice, tables, pictures, optional title page. Tested in Microsoft Word 365.
+- **Print and Export to PDF** for a document, folder or project, through your system's print dialog.
+  One **Export…** item on the right-click menu opens the full Export dialog.
+- **AI-generated pictures (B5):** the **Pictures** button in the top bar opens the Pictures window;
+  `/image` in a document inserts a picture at the cursor; `/image` in the chat adds one to the conversation.
+  Set a **picture style** per project (watercolour, pencil sketch, oil painting, photo… or your own);
+  shown and changeable in every request.
+- **Voice — dictation and read-aloud (B6):** a microphone button in the editor and every text box
+  (the browser's free dictation, or AI dictation). **Read aloud** reads a selection, a document, chat messages
+  or AI replies with the computer's voices or an AI voice. **Talk** switch in the chat: speak a message,
+  hear the reply, then Kalamo listens again.
+- **Version history (B14):** Kalamo saves a version automatically every 10 minutes while you write, when you
+  switch documents, before an AI change and before Replace all. **Save a version** with a note at any time.
+  The **History** window shows what changed and lets you restore; it floats so you can keep writing.
+- **Reworked first run:** the setup wizard now asks first — guided setup or look around yourself.
+  The guided path explains what the AI service is and sets a few key settings, ending with a numbered map of
+  the screen. The wizard's last page offers to create a desktop shortcut.
+- **One-click downloads:** this release and every future one also publishes the downloads without the version
+  number in the name, so the README can always link to the newest file.
+- **App icon and shortcuts:** Kalamo now has its own icon on every platform.
+  Settings → **Create a desktop shortcut** adds it to the Windows desktop and Start menu, the Mac Applications
+  folder, or the Linux desktop and application menu. The Mac download includes **Kalamo Bhala.app**.
+- **Spelling — Show me fixed:** "Show me" in Spelling settings now shows the steps to follow in the browser
+  you are using, with a **Copy address** button and a link to the guide section "Spell check in another language"
+  (Chrome 157+ can no longer open its own settings pages from outside the browser).
+- **Editor improvements:** paste text with pictures (from Word or some websites); merged table cells
+  (Merge / Split); more than one line per cell (Enter); picture size (25 / 50 / 75 / 100 % or drag the corner);
+  draggable borders between the binder, the editor, the split-view panes and the chat.
+  Split view — **Insert at cursor** or **Append** puts the right-hand document into yours as one undo step.
+- **Chat improvements:** search the open project (a switch sends only the passages that share words with your
+  message — word search on your computer, no AI, no cost); saved prompts in the chat's `/` list;
+  a prompt with its own model sends that one message on that model.
+- **Worksheet wizard — Fill every empty section (B19):** lists the empty sections and the estimated cost,
+  asks for a budget and a request limit, then writes them in order, pausing after each one for you to
+  accept, edit, discard or stop.
+- API keys are verified by an automated test to never appear in the library, backups, exports or what the browser is sent.
+
 ## 0.63 (November 2026)
 
 - **Tables:** the ▦ button inserts a table; inside it, add or delete rows and columns; Tab moves between cells.

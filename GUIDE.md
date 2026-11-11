@@ -42,6 +42,7 @@ no writer has used them yet.
    is new and not signed with a paid certificate. It appears only the first time.
 5. A **black window** opens. That is Kalamo's engine: **keep it open while you write** (you can minimise it).
    Your browser then opens Kalamo by itself. If it does not, open your browser and go to **http://127.0.0.1:8765**.
+6. **Desktop shortcut:** inside Kalamo, **Settings → Start and folders → Create a desktop shortcut** puts Kalamo with its icon on your desktop and Start menu (or Applications / Linux menu).
 
 Needs Windows 10 or 11 (64-bit). Nothing is installed; Python is included in the `python` folder.
 
@@ -76,8 +77,7 @@ most; Safari and Firefox should work but are not tested yet.
 Kalamo first shows a short notice. Read it and click **I understand** (**1**). It appears once (and again after an
 update).
 
-**The setup wizard** then takes you through five short steps (you can also run it later: Settings → *Run the setup
-wizard again…*):
+**The setup wizard** first asks whether you want a guided setup (**Yes, guide me** or **No thanks, I'll look around myself**). You can also run it later from Settings → *Run the setup wizard again…*:
 
 1. **Welcome:** where your writing is kept (the *library folder*, normally `Documents\MyWritings`).
 2. **Raptor Write backups:** *Yes* or *No*.
@@ -91,7 +91,11 @@ wizard again…*):
    - **Tip:** Raptor Write's full backup can leave documents out. While Raptor Write is still open, also export each
      project on its own, import those too, and compare the word counts in the report.
    - *No* starts blank and can make your first project for you.
-3. **Your OpenRouter key** (for the AI features):
+3. **What is OpenRouter, and why?:** explains how the AI connection works with a simple diagram, and why you stay in control.
+
+   ![What is OpenRouter, and why?](images/21-wizard-openrouter.png)
+
+4. **Your OpenRouter key** (for the AI features):
 
    ![The setup wizard: getting an OpenRouter key](images/20-wizard-key.png)
 
@@ -101,10 +105,10 @@ wizard again…*):
    - Or make a key yourself with the six steps on screen: **Open OpenRouter.ai** (**1**) opens the key page in a new tab;
      sign in, **Create Key**, copy it, come back and click **I have my key** (**2**). More detail: [section 6](#6-setting-up-the-ai-openrouter).
    - You can also skip this and add the key later under **Settings → API keys**.
-4. **Your defaults:** the standard prompts and model collections, the starting model (`openrouter/free`), and any
-   imported models that no longer exist on OpenRouter (choose another model for those). Here you also choose what
-   Kalamo opens when it starts: **the project that was open last time** (normal), the Projects page, or a new project.
-5. **All set:** **Start writing** opens your (first) project.
+5. **A few settings:** colour scheme, interface size, spell check (with **Show me**), autosave timing, and what Kalamo opens when it starts (**the project that was open last time**, the Projects page, or a new project). Each choice saves immediately.
+6. **Your defaults:** the standard prompts and model collections, the starting model (`openrouter/free`), and any
+   imported models that no longer exist on OpenRouter (choose another model for those).
+7. **All set:** a numbered map of the screen and an offer to **Create a desktop shortcut**, then **Start writing** opens your (first) project.
 
 ## 3. Projects
 
@@ -170,19 +174,24 @@ cancels). In the binder, select a document or folder and press **F2**, click the
 
 ![A table in the novel example](images/22-table.png)
 
-1. **A table** in your text. Click in a cell to type; **Tab** moves to the next cell.
+1. **A table** in your text. Click in a cell to type; **Tab** moves to the next cell; **Enter** starts a new line inside a cell.
 2. **The table buttons.** **▦** inserts a new table with a header row. While the cursor is in a table, buttons appear
-   to add a row (**+ Row**) or a column (**+ Col**), or to delete a row, a column or the whole table.
+   to add a row (**+ Row**) or a column (**+ Col**), delete a row, a column or the whole table, or **Merge** / **Split** selected cells.
 
-Tables are saved as ordinary Markdown tables, so other Markdown programs show them too.
+Tables are saved as ordinary Markdown tables (or HTML tables while a cell merge is active, which Obsidian, Typora and GitHub also show).
 
 **Pictures**
 
 ![A picture in the novel example](images/23-picture.png)
 
-1. **The 🖼 button** adds a picture (PNG, JPEG, GIF, WebP or SVG) at the cursor.
+1. **The 🖼 button** adds a picture (PNG, JPEG, GIF, WebP or SVG) at the cursor. You can also paste a screenshot (`Ctrl+V`), paste text containing pictures (for example from Word), or drag a picture file in from your computer.
 2. **The picture** in your text. Kalamo copies it into the project's *images* folder (not shown in the binder) and the
-   document keeps an ordinary Markdown link to it. Pictures are in your backups, and in a ZIP export of a whole project.
+   document keeps an ordinary Markdown link to it. Click a picture to resize it (**25% 50% 75% 100%**, **Original**, or drag the corner handle). Pictures are in your backups, and in a ZIP, Word, ODT or PDF export.
+
+**Version history and Voice**
+
+- **History** (the clock button next to "Saved", or right-click a document → **History…**): Kalamo keeps automatic versions every 10 minutes while you write, when you switch documents, and before any AI change or Replace all. Click **Save a version…** with a note at any time. The History window floats over your writing, shows what changed, and lets you restore an earlier version (saving your current text first).
+- **Voice (dictation and read-aloud):** click the microphone button in the editor or any text box to dictate (free browser dictation or AI dictation in Settings → *Dictation*). Click the speaker button to **Read aloud** a selection, document, chat message or AI reply (free computer voices or AI voice in Settings → *Read aloud*).
 
 **New here.** Right-click a folder or the project name → **New document here…** or **New folder here…** to add it
 right inside that folder.
@@ -197,7 +206,7 @@ can also open them in Notepad, Word or Obsidian, and Kalamo notices when they ch
 ![Split view: your chapter on the left, a character sheet on the right](images/06-split-view.png)
 
 Click **Split view**, then click any document in the binder: it opens on the right, read only (**1**), while your
-chapter stays on the left. **Edit this one** swaps the two. Click **Split view** again to close it.
+chapter stays on the left. Drag the border between the binder and the editor, or between the two split-view panes, to resize them (double-click a border to reset it). **Insert at cursor** or **Append** puts the right-hand document into yours as one undo step; **Edit this one** swaps the two. Click **Split view** again to close it.
 
 **Find and replace**
 
@@ -299,8 +308,10 @@ The three standard prompts cannot be edited (duplicate one to make your own), bu
 ![The chat window](images/14-chat.png)
 
 **Chat** (top bar, or type `/chat`) talks with any model (**1**). In the message box (**2**), type **`@`** to include a
-document, folder or project, or **`{{`** to include text from the open document. **Insert in document** puts a reply in
-your text. Chats are saved by themselves; **Dock right** puts the chat beside your text.
+document, folder or project, **`{{`** to include text from the open document, or **`/`** for commands (`/image`) and saved prompts (prompts with their own model send that message on their own model). **Insert in document** puts a reply in
+your text. Chats are saved by themselves; **Dock right** puts the chat beside your text, and you can drag the border between the chat list and messages. Turn on the **Talk** switch to speak messages and hear replies hands-free.
+
+**AI-generated pictures** (**Pictures** button in the top bar, or `/image` in a document or chat): describe a picture and an AI model generates it. Choose a **project picture style** (watercolour, pencil sketch, oil painting, photo… or your own), aspect ratio, and up to 3 existing project pictures to start from. Nothing is saved until you click **Insert at cursor** or **Save to project pictures**.
 
 **Search the open project** (the switch under the message box) lets the chat answer from your project without
 sending all of it. Kalamo searches the project on your PC (a word search: free, nothing is sent for the search) and
@@ -326,12 +337,14 @@ insert it, or (for tense) replace the original. A safety copy is always made fir
 
 ![Export](images/12-export.png)
 
-**Export** (binder toolbar) saves a document, a folder or the whole project as one Markdown file, one plain-text file,
-or a ZIP of the `.md` files, in binder order.
+**Export** (binder toolbar, or right-click a document/folder/project → **Export…**) saves a document, a folder or the whole project as:
+- **Word (.docx)** or **OpenDocument (.odt)**: Normal or **Manuscript** layout (double-spaced, indented first lines, `#` scene breaks, header with your name, title and page number), font choice (default Aptos), tables, pictures, optional title page.
+- **Markdown (.md)**, **plain text (.txt)**, or a **ZIP of `.md` files**, in binder order.
+- **PDF and printing:** **PDF** and **Print** open your browser's print window with the document, folder or project laid out as pages, tables and pictures included. To make a PDF, choose **Save as PDF** as the printer (or press **Ctrl+P** in the editor).
 
-**PDF and printing.** In the same dialog, **PDF** and **Print** open your browser's print window with the document,
-folder or project laid out as pages, tables and pictures included. To make a PDF, choose **Save as PDF** as the
-printer. You can also right-click in the binder → **Print…** or **Export to PDF…**, or press **Ctrl+P** in the editor.
+**Importing files** (binder Import button, right-click a folder → **Import here…**, drag files onto the binder, or **Import…** on the Projects page):
+- Import **PDF** (free reader on your PC, or AI reading for scanned/messy pages with a word check; choose a page range, stop safely, or right-click → **Carry on importing** to resume), **Word** (`.docx` and `.doc` 97–2003), **PowerPoint** (`.pptx`), **OpenDocument** (`.odt`, `.odp`, `.ods`), **Excel** (`.xlsx`), **saved web pages** (`.html`), **Rich Text** (`.rtf`), and **photos of notes** (`.jpg`, `.png`, `.webp`, `.heic` read by AI).
+- Split into one document per heading/slide/sheet or keep as one document; imports run in the background so you can keep writing; originals are kept in `originals` (right-click → **Open the original**).
 
 Kalamo also keeps automatic safety copies of documents before any AI change, in a hidden `.kalamo\safety` folder
 inside each project.
@@ -349,7 +362,7 @@ once, then write each chapter in steps. **You stay in control: nothing becomes p
    rules. Set the number of chapters. **Save.**
 2. Click **Create it from the template**: a *Worksheet* document with 18 sections appears in the binder.
 3. Choose a section (**1**), click **Write this section**, read the result, then **Accept into the worksheet** (**2**),
-   or **Edit, then accept…**, or **Discard**. Go through the sections in order; each one builds on the earlier ones.
+   or **Edit, then accept…**, or **Discard**. Go through the sections in order, or click **Fill every empty section…** to run them sequentially within a budget and request limit (pausing after each one for you to accept, edit, discard or stop).
 4. **Edit template…** changes the sections, for this book or for all books.
 
 **Step 2: the chapter pipeline** (**Chapter pipeline** above the editor, or `/chapter`)
@@ -397,9 +410,18 @@ a change is saved at once.
 - **About and reset:** the version, the setup wizard again, and **Reset to defaults** (your folders, keys, prompts
   and writing are kept).
 
-> [!TIP]
-> **Spell check in another language:** your browser needs that language's dictionary once. In Settings → Spelling,
-> **Show me** opens your browser's language settings (Chrome, Edge, Brave, Vivaldi, Opera), or explains where they are (Firefox, Safari): add the language and switch on spell check for it.
+### Spell check in another language
+
+Kalamo uses your browser's own spell check, so the browser must have your language's dictionary. Browsers do not let a web page open their settings pages (and Chrome and Edge open such a link from another program as a blank window), so this is done by hand, once.
+
+1. In Kalamo, open **Settings** (gear icon) → **Spelling** and click **Show me**. Kalamo shows the steps for the browser you are using, with its settings address.
+2. Click **Copy address**. (Chrome: `chrome://settings/languages`; Edge: `edge://settings/languages`; Brave: `brave://settings/languages`; Opera: `opera://settings/languages`.)
+3. Open a new tab (`Ctrl+T`; on a Mac `⌘T`), click in the address bar, paste (`Ctrl+V`; `⌘V`) and press **Enter**. Or use the browser's menu: Chrome `⋮` → Settings → Languages; Edge `…` → Settings → Languages; Brave `☰` → Settings → Languages.
+4. Under **Preferred languages**, click **Add languages**, tick your language and click **Add**.
+5. Under **Spell check** (Edge: **Writing assistance**), switch spell check on and switch it on for your language.
+6. Go back to the Kalamo tab and choose the same language under **Spelling language**.
+
+*Firefox:* Settings → General → Language → Choose…; dictionaries are add-ons (right-click a word → Languages → Add Dictionaries…). *Safari:* macOS System Settings → Keyboard → Text Input (Edit…); in Safari, Edit → Spelling and Grammar.
 
 ## 12. Where your files are, updating, removing
 
