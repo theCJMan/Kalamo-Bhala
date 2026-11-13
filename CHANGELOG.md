@@ -1,5 +1,14 @@
 # Changes
 
+## 0.71 (November 2026)
+
+- **Modes: four levels of complexity (B28):** Choose between *Just Write* (minimal, clean screen), *Writer's Desk* (focused on drafting and revising), *Studio* (expanded tools), and *Book Master* (full feature set with chapter pipeline, worksheet wizard, and detailed trackers). Tucked features remain accessible in a More (⋯) menu on each toolbar. Choose your mode during setup or anytime in Settings → Mode.
+- **Show imported HTML & 3D viewers (B27):** Imported `.html` files (such as 3D model viewers) can now be viewed in an isolated, read-only offline sandbox via an `HTML view` toggle in the editor, with bundled `three.js` r128 and `OrbitControls`.
+- **Worksheet wizard docking:** Dock the worksheet to the right-hand pane or float it for seamless chapter planning while writing, with built-in templates for Academic Research and Business Reports.
+- **Sub-numbered lists:** Support for indented multi-level numbering (`1`, `1.1`, `1.1.1`, `1.1.1.1`) up to level 4 using Tab / Shift+Tab.
+- **Safe picture pasting:** Pasting text with web image URLs now shows an approval banner ("Download into project" / "Leave out") with an option to remember your preference.
+- **Split view formatting preservation:** Transferring text selections from the right-hand lookup pane (via the "Paste at cursor" popup or dragging) now reliably preserves headings, bullet lists, and ordered lists formatting on the editor window.
+
 ## 0.70 (November 2026)
 
 - **Import more files:** drag almost any document onto the binder or use Import… on the Projects page.
