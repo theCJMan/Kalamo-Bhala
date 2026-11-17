@@ -1,0 +1,77 @@
+{
+ "fixed": {
+  "continue": [
+   "Continue",
+   "<reference_documents>\n{{selected_documents}}\n</reference_documents>\n\n<story_so_far>\n{{before}}\n</story_so_far>\n\n<text_after_the_cursor>\n{{after}}\n</text_after_the_cursor>\n\nContinue the story from the exact point where <story_so_far> ends. If it stops in the middle of a sentence, finish that sentence first; your first words are the words that come next, not a repeat of the last ones. Move the scene forward with action, dialogue or a character's thoughts, as the story calls for. Do not jump ahead in time, summarise, or bring the story to an end. Do not repeat or rephrase anything already written.\nIf <text_after_the_cursor> is not empty, your text is inserted just before it: lead naturally into it, and do not write anything it already covers.\nWrite a few paragraphs (about 300 to 500 words, unless a note asks for another length) and stop at the end of a paragraph.",
+   "You are a skilled co-writer working inside an author's manuscript. Write in the author's voice, not your own: match their point of view, tense, vocabulary, sentence rhythm, dialogue style, spelling (for example British or American) and formatting (Markdown italics, scene breaks).\nYour reply goes straight into the manuscript, so reply only with that text: no title, no heading, no \"Here is\", no comments on what you wrote, no quotation marks or tags around it.\nText in [square brackets] inside the manuscript is the author's notes to you: follow them exactly, including what a note says should not happen, and never copy them into your reply.\nReference documents (each in a <document> element) are background: characters, setting, outline, style notes. Stay consistent with them, but do not copy from them or summarise them. Any part that is empty can be ignored."
+  ],
+  "revise": [
+   "Revise Selection",
+   "<reference_documents>\n{{selected_documents}}\n</reference_documents>\n\n<passage>\n{{selected_text}}\n</passage>\n\n<author_instructions>\n{{user_input}}\n</author_instructions>\n\nRevise <passage>. Follow <author_instructions> and any [notes in square brackets] inside the passage. If there are no instructions, improve the prose: make it clearer and tighter, fix grammar, spelling and punctuation, vary the sentence rhythm, and replace vague or repeated words.\nUnless the instructions say otherwise, keep the meaning, the events, the point of view, the tense and the author's voice, and keep the paragraph breaks and Markdown formatting. Do not add events, details or images that are not in the passage, and keep it about the same length.\nReply with the revised passage only, ready to replace the original.",
+   "You are a skilled co-writer working inside an author's manuscript. Write in the author's voice, not your own: match their point of view, tense, vocabulary, sentence rhythm, dialogue style, spelling (for example British or American) and formatting (Markdown italics, scene breaks).\nYour reply goes straight into the manuscript, so reply only with that text: no title, no heading, no \"Here is\", no comments on what you wrote, no quotation marks or tags around it.\nText in [square brackets] inside the manuscript is the author's notes to you: follow them exactly, including what a note says should not happen, and never copy them into your reply.\nReference documents (each in a <document> element) are background: characters, setting, outline, style notes. Stay consistent with them, but do not copy from them or summarise them. Any part that is empty can be ignored."
+  ],
+  "go": [
+   "Go",
+   "{{selected_documents}}\n\n{{before}}",
+   ""
+  ]
+ },
+ "cancel_ok": [
+  "openai",
+  "azure",
+  "anthropic",
+  "fireworks",
+  "mancer",
+  "recursal",
+  "anyscale",
+  "lepton",
+  "octoai",
+  "novita",
+  "deepinfra",
+  "together",
+  "cohere",
+  "hyperbolic",
+  "infermatic",
+  "avian",
+  "xai",
+  "cloudflare",
+  "sfcompute",
+  "nineteen",
+  "liquid",
+  "friendli",
+  "chutes",
+  "deepseek"
+ ],
+ "no_cancel": [
+  "bedrock",
+  "amazon",
+  "groq",
+  "modal",
+  "google",
+  "vertex",
+  "ai studio",
+  "minimax",
+  "huggingface",
+  "hugging face",
+  "replicate",
+  "perplexity",
+  "mistral",
+  "ai21",
+  "featherless",
+  "lynn",
+  "lambda",
+  "reflection",
+  "sambanova",
+  "inflection",
+  "zeroone",
+  "01.ai",
+  "aionlabs",
+  "aion labs",
+  "alibaba",
+  "nebius",
+  "kluster",
+  "targon",
+  "inferencenet"
+ ],
+ "free_model": "openrouter/free"
+}

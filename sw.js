@@ -1,0 +1,273 @@
+// Kalamo Bhala mobile: keeps the app on the phone so it opens without internet. Version 0.7.5.
+// The writing itself is never here (it is in IndexedDB); this only caches the app's own files.
+const CACHE = 'kalamo-mobile-0.7.5';
+const FILES = [
+ "./",
+ "ai-data.json",
+ "app.css",
+ "examples.json",
+ "icons/kalamo-256.png",
+ "icons/kalamo-512.png",
+ "index.html",
+ "js/ai.js",
+ "js/binder.js",
+ "js/camera.js",
+ "js/chat.js",
+ "js/config.js",
+ "js/drive.js",
+ "js/imports.js",
+ "js/library.js",
+ "js/main.js",
+ "js/modelpick.js",
+ "js/oauth.js",
+ "js/office.js",
+ "js/pdfread.js",
+ "js/pictures.js",
+ "js/projects.js",
+ "js/runner.js",
+ "js/settings.js",
+ "js/settingsui.js",
+ "js/setup.js",
+ "js/sync.js",
+ "js/update.js",
+ "js/util.js",
+ "js/vfs.js",
+ "js/write.js",
+ "manifest.webmanifest",
+ "vendor/kalamo-editor.js",
+ "vendor/pdfjs/LICENSE",
+ "vendor/pdfjs/cmaps/78-EUC-H.bcmap",
+ "vendor/pdfjs/cmaps/78-EUC-V.bcmap",
+ "vendor/pdfjs/cmaps/78-H.bcmap",
+ "vendor/pdfjs/cmaps/78-RKSJ-H.bcmap",
+ "vendor/pdfjs/cmaps/78-RKSJ-V.bcmap",
+ "vendor/pdfjs/cmaps/78-V.bcmap",
+ "vendor/pdfjs/cmaps/78ms-RKSJ-H.bcmap",
+ "vendor/pdfjs/cmaps/78ms-RKSJ-V.bcmap",
+ "vendor/pdfjs/cmaps/83pv-RKSJ-H.bcmap",
+ "vendor/pdfjs/cmaps/90ms-RKSJ-H.bcmap",
+ "vendor/pdfjs/cmaps/90ms-RKSJ-V.bcmap",
+ "vendor/pdfjs/cmaps/90msp-RKSJ-H.bcmap",
+ "vendor/pdfjs/cmaps/90msp-RKSJ-V.bcmap",
+ "vendor/pdfjs/cmaps/90pv-RKSJ-H.bcmap",
+ "vendor/pdfjs/cmaps/90pv-RKSJ-V.bcmap",
+ "vendor/pdfjs/cmaps/Add-H.bcmap",
+ "vendor/pdfjs/cmaps/Add-RKSJ-H.bcmap",
+ "vendor/pdfjs/cmaps/Add-RKSJ-V.bcmap",
+ "vendor/pdfjs/cmaps/Add-V.bcmap",
+ "vendor/pdfjs/cmaps/Adobe-CNS1-0.bcmap",
+ "vendor/pdfjs/cmaps/Adobe-CNS1-1.bcmap",
+ "vendor/pdfjs/cmaps/Adobe-CNS1-2.bcmap",
+ "vendor/pdfjs/cmaps/Adobe-CNS1-3.bcmap",
+ "vendor/pdfjs/cmaps/Adobe-CNS1-4.bcmap",
+ "vendor/pdfjs/cmaps/Adobe-CNS1-5.bcmap",
+ "vendor/pdfjs/cmaps/Adobe-CNS1-6.bcmap",
+ "vendor/pdfjs/cmaps/Adobe-CNS1-UCS2.bcmap",
+ "vendor/pdfjs/cmaps/Adobe-GB1-0.bcmap",
+ "vendor/pdfjs/cmaps/Adobe-GB1-1.bcmap",
+ "vendor/pdfjs/cmaps/Adobe-GB1-2.bcmap",
+ "vendor/pdfjs/cmaps/Adobe-GB1-3.bcmap",
+ "vendor/pdfjs/cmaps/Adobe-GB1-4.bcmap",
+ "vendor/pdfjs/cmaps/Adobe-GB1-5.bcmap",
+ "vendor/pdfjs/cmaps/Adobe-GB1-UCS2.bcmap",
+ "vendor/pdfjs/cmaps/Adobe-Japan1-0.bcmap",
+ "vendor/pdfjs/cmaps/Adobe-Japan1-1.bcmap",
+ "vendor/pdfjs/cmaps/Adobe-Japan1-2.bcmap",
+ "vendor/pdfjs/cmaps/Adobe-Japan1-3.bcmap",
+ "vendor/pdfjs/cmaps/Adobe-Japan1-4.bcmap",
+ "vendor/pdfjs/cmaps/Adobe-Japan1-5.bcmap",
+ "vendor/pdfjs/cmaps/Adobe-Japan1-6.bcmap",
+ "vendor/pdfjs/cmaps/Adobe-Japan1-UCS2.bcmap",
+ "vendor/pdfjs/cmaps/Adobe-Korea1-0.bcmap",
+ "vendor/pdfjs/cmaps/Adobe-Korea1-1.bcmap",
+ "vendor/pdfjs/cmaps/Adobe-Korea1-2.bcmap",
+ "vendor/pdfjs/cmaps/Adobe-Korea1-UCS2.bcmap",
+ "vendor/pdfjs/cmaps/B5-H.bcmap",
+ "vendor/pdfjs/cmaps/B5-V.bcmap",
+ "vendor/pdfjs/cmaps/B5pc-H.bcmap",
+ "vendor/pdfjs/cmaps/B5pc-V.bcmap",
+ "vendor/pdfjs/cmaps/CNS-EUC-H.bcmap",
+ "vendor/pdfjs/cmaps/CNS-EUC-V.bcmap",
+ "vendor/pdfjs/cmaps/CNS1-H.bcmap",
+ "vendor/pdfjs/cmaps/CNS1-V.bcmap",
+ "vendor/pdfjs/cmaps/CNS2-H.bcmap",
+ "vendor/pdfjs/cmaps/CNS2-V.bcmap",
+ "vendor/pdfjs/cmaps/ETHK-B5-H.bcmap",
+ "vendor/pdfjs/cmaps/ETHK-B5-V.bcmap",
+ "vendor/pdfjs/cmaps/ETen-B5-H.bcmap",
+ "vendor/pdfjs/cmaps/ETen-B5-V.bcmap",
+ "vendor/pdfjs/cmaps/ETenms-B5-H.bcmap",
+ "vendor/pdfjs/cmaps/ETenms-B5-V.bcmap",
+ "vendor/pdfjs/cmaps/EUC-H.bcmap",
+ "vendor/pdfjs/cmaps/EUC-V.bcmap",
+ "vendor/pdfjs/cmaps/Ext-H.bcmap",
+ "vendor/pdfjs/cmaps/Ext-RKSJ-H.bcmap",
+ "vendor/pdfjs/cmaps/Ext-RKSJ-V.bcmap",
+ "vendor/pdfjs/cmaps/Ext-V.bcmap",
+ "vendor/pdfjs/cmaps/GB-EUC-H.bcmap",
+ "vendor/pdfjs/cmaps/GB-EUC-V.bcmap",
+ "vendor/pdfjs/cmaps/GB-H.bcmap",
+ "vendor/pdfjs/cmaps/GB-V.bcmap",
+ "vendor/pdfjs/cmaps/GBK-EUC-H.bcmap",
+ "vendor/pdfjs/cmaps/GBK-EUC-V.bcmap",
+ "vendor/pdfjs/cmaps/GBK2K-H.bcmap",
+ "vendor/pdfjs/cmaps/GBK2K-V.bcmap",
+ "vendor/pdfjs/cmaps/GBKp-EUC-H.bcmap",
+ "vendor/pdfjs/cmaps/GBKp-EUC-V.bcmap",
+ "vendor/pdfjs/cmaps/GBT-EUC-H.bcmap",
+ "vendor/pdfjs/cmaps/GBT-EUC-V.bcmap",
+ "vendor/pdfjs/cmaps/GBT-H.bcmap",
+ "vendor/pdfjs/cmaps/GBT-V.bcmap",
+ "vendor/pdfjs/cmaps/GBTpc-EUC-H.bcmap",
+ "vendor/pdfjs/cmaps/GBTpc-EUC-V.bcmap",
+ "vendor/pdfjs/cmaps/GBpc-EUC-H.bcmap",
+ "vendor/pdfjs/cmaps/GBpc-EUC-V.bcmap",
+ "vendor/pdfjs/cmaps/H.bcmap",
+ "vendor/pdfjs/cmaps/HKdla-B5-H.bcmap",
+ "vendor/pdfjs/cmaps/HKdla-B5-V.bcmap",
+ "vendor/pdfjs/cmaps/HKdlb-B5-H.bcmap",
+ "vendor/pdfjs/cmaps/HKdlb-B5-V.bcmap",
+ "vendor/pdfjs/cmaps/HKgccs-B5-H.bcmap",
+ "vendor/pdfjs/cmaps/HKgccs-B5-V.bcmap",
+ "vendor/pdfjs/cmaps/HKm314-B5-H.bcmap",
+ "vendor/pdfjs/cmaps/HKm314-B5-V.bcmap",
+ "vendor/pdfjs/cmaps/HKm471-B5-H.bcmap",
+ "vendor/pdfjs/cmaps/HKm471-B5-V.bcmap",
+ "vendor/pdfjs/cmaps/HKscs-B5-H.bcmap",
+ "vendor/pdfjs/cmaps/HKscs-B5-V.bcmap",
+ "vendor/pdfjs/cmaps/Hankaku.bcmap",
+ "vendor/pdfjs/cmaps/Hiragana.bcmap",
+ "vendor/pdfjs/cmaps/KSC-EUC-H.bcmap",
+ "vendor/pdfjs/cmaps/KSC-EUC-V.bcmap",
+ "vendor/pdfjs/cmaps/KSC-H.bcmap",
+ "vendor/pdfjs/cmaps/KSC-Johab-H.bcmap",
+ "vendor/pdfjs/cmaps/KSC-Johab-V.bcmap",
+ "vendor/pdfjs/cmaps/KSC-V.bcmap",
+ "vendor/pdfjs/cmaps/KSCms-UHC-H.bcmap",
+ "vendor/pdfjs/cmaps/KSCms-UHC-HW-H.bcmap",
+ "vendor/pdfjs/cmaps/KSCms-UHC-HW-V.bcmap",
+ "vendor/pdfjs/cmaps/KSCms-UHC-V.bcmap",
+ "vendor/pdfjs/cmaps/KSCpc-EUC-H.bcmap",
+ "vendor/pdfjs/cmaps/KSCpc-EUC-V.bcmap",
+ "vendor/pdfjs/cmaps/Katakana.bcmap",
+ "vendor/pdfjs/cmaps/LICENSE",
+ "vendor/pdfjs/cmaps/NWP-H.bcmap",
+ "vendor/pdfjs/cmaps/NWP-V.bcmap",
+ "vendor/pdfjs/cmaps/RKSJ-H.bcmap",
+ "vendor/pdfjs/cmaps/RKSJ-V.bcmap",
+ "vendor/pdfjs/cmaps/Roman.bcmap",
+ "vendor/pdfjs/cmaps/UniCNS-UCS2-H.bcmap",
+ "vendor/pdfjs/cmaps/UniCNS-UCS2-V.bcmap",
+ "vendor/pdfjs/cmaps/UniCNS-UTF16-H.bcmap",
+ "vendor/pdfjs/cmaps/UniCNS-UTF16-V.bcmap",
+ "vendor/pdfjs/cmaps/UniCNS-UTF32-H.bcmap",
+ "vendor/pdfjs/cmaps/UniCNS-UTF32-V.bcmap",
+ "vendor/pdfjs/cmaps/UniCNS-UTF8-H.bcmap",
+ "vendor/pdfjs/cmaps/UniCNS-UTF8-V.bcmap",
+ "vendor/pdfjs/cmaps/UniGB-UCS2-H.bcmap",
+ "vendor/pdfjs/cmaps/UniGB-UCS2-V.bcmap",
+ "vendor/pdfjs/cmaps/UniGB-UTF16-H.bcmap",
+ "vendor/pdfjs/cmaps/UniGB-UTF16-V.bcmap",
+ "vendor/pdfjs/cmaps/UniGB-UTF32-H.bcmap",
+ "vendor/pdfjs/cmaps/UniGB-UTF32-V.bcmap",
+ "vendor/pdfjs/cmaps/UniGB-UTF8-H.bcmap",
+ "vendor/pdfjs/cmaps/UniGB-UTF8-V.bcmap",
+ "vendor/pdfjs/cmaps/UniJIS-UCS2-H.bcmap",
+ "vendor/pdfjs/cmaps/UniJIS-UCS2-HW-H.bcmap",
+ "vendor/pdfjs/cmaps/UniJIS-UCS2-HW-V.bcmap",
+ "vendor/pdfjs/cmaps/UniJIS-UCS2-V.bcmap",
+ "vendor/pdfjs/cmaps/UniJIS-UTF16-H.bcmap",
+ "vendor/pdfjs/cmaps/UniJIS-UTF16-V.bcmap",
+ "vendor/pdfjs/cmaps/UniJIS-UTF32-H.bcmap",
+ "vendor/pdfjs/cmaps/UniJIS-UTF32-V.bcmap",
+ "vendor/pdfjs/cmaps/UniJIS-UTF8-H.bcmap",
+ "vendor/pdfjs/cmaps/UniJIS-UTF8-V.bcmap",
+ "vendor/pdfjs/cmaps/UniJIS2004-UTF16-H.bcmap",
+ "vendor/pdfjs/cmaps/UniJIS2004-UTF16-V.bcmap",
+ "vendor/pdfjs/cmaps/UniJIS2004-UTF32-H.bcmap",
+ "vendor/pdfjs/cmaps/UniJIS2004-UTF32-V.bcmap",
+ "vendor/pdfjs/cmaps/UniJIS2004-UTF8-H.bcmap",
+ "vendor/pdfjs/cmaps/UniJIS2004-UTF8-V.bcmap",
+ "vendor/pdfjs/cmaps/UniJISPro-UCS2-HW-V.bcmap",
+ "vendor/pdfjs/cmaps/UniJISPro-UCS2-V.bcmap",
+ "vendor/pdfjs/cmaps/UniJISPro-UTF8-V.bcmap",
+ "vendor/pdfjs/cmaps/UniJISX0213-UTF32-H.bcmap",
+ "vendor/pdfjs/cmaps/UniJISX0213-UTF32-V.bcmap",
+ "vendor/pdfjs/cmaps/UniJISX02132004-UTF32-H.bcmap",
+ "vendor/pdfjs/cmaps/UniJISX02132004-UTF32-V.bcmap",
+ "vendor/pdfjs/cmaps/UniKS-UCS2-H.bcmap",
+ "vendor/pdfjs/cmaps/UniKS-UCS2-V.bcmap",
+ "vendor/pdfjs/cmaps/UniKS-UTF16-H.bcmap",
+ "vendor/pdfjs/cmaps/UniKS-UTF16-V.bcmap",
+ "vendor/pdfjs/cmaps/UniKS-UTF32-H.bcmap",
+ "vendor/pdfjs/cmaps/UniKS-UTF32-V.bcmap",
+ "vendor/pdfjs/cmaps/UniKS-UTF8-H.bcmap",
+ "vendor/pdfjs/cmaps/UniKS-UTF8-V.bcmap",
+ "vendor/pdfjs/cmaps/V.bcmap",
+ "vendor/pdfjs/cmaps/WP-Symbol.bcmap",
+ "vendor/pdfjs/pdf.min.mjs",
+ "vendor/pdfjs/pdf.worker.min.mjs",
+ "vendor/pdfjs/standard_fonts/FoxitDingbats.pfb",
+ "vendor/pdfjs/standard_fonts/FoxitFixed.pfb",
+ "vendor/pdfjs/standard_fonts/FoxitFixedBold.pfb",
+ "vendor/pdfjs/standard_fonts/FoxitFixedBoldItalic.pfb",
+ "vendor/pdfjs/standard_fonts/FoxitFixedItalic.pfb",
+ "vendor/pdfjs/standard_fonts/FoxitSerif.pfb",
+ "vendor/pdfjs/standard_fonts/FoxitSerifBold.pfb",
+ "vendor/pdfjs/standard_fonts/FoxitSerifBoldItalic.pfb",
+ "vendor/pdfjs/standard_fonts/FoxitSerifItalic.pfb",
+ "vendor/pdfjs/standard_fonts/FoxitSymbol.pfb",
+ "vendor/pdfjs/standard_fonts/LICENSE_FOXIT",
+ "vendor/pdfjs/standard_fonts/LICENSE_LIBERATION",
+ "vendor/pdfjs/standard_fonts/LiberationSans-Bold.ttf",
+ "vendor/pdfjs/standard_fonts/LiberationSans-BoldItalic.ttf",
+ "vendor/pdfjs/standard_fonts/LiberationSans-Italic.ttf",
+ "vendor/pdfjs/standard_fonts/LiberationSans-Regular.ttf"
+];
+
+// cache: 'reload' = always fetch fresh from the server; otherwise the browser's own HTTP cache can hand an update
+// the previous version's files (a phone once kept a broken write.js that way).
+const fresh = (f) => new Request(f, { cache: 'reload' });
+self.addEventListener('install', (e) => {
+  e.waitUntil(caches.open(CACHE).then((c) => c.addAll(FILES.map(fresh))));
+});
+self.addEventListener('activate', (e) => {
+  e.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((k) => k.startsWith('kalamo-mobile-') && k !== CACHE).map((k) => caches.delete(k))))
+    .then(() => self.clients.claim()));
+});
+
+// The phone (Android, low storage, "clear site data") can drop the offline copy while the app keeps running; then
+// the prompts, examples and a reload had nothing to come from (test round 17 Nov 2026). The app asks for a check at
+// every start: whatever is missing is fetched again (when there is a connection) and the answer says what is still
+// missing.
+async function repair() {
+  const c = await caches.open(CACHE);
+  const missing = [];
+  for (const f of FILES) { if (!(await c.match(f, { ignoreSearch: true }))) missing.push(f); }
+  const still = [];
+  for (const f of missing) { try { await c.add(fresh(f)); } catch (err) { still.push(f); } }
+  return { missing: missing.length, still: still.length };
+}
+self.addEventListener('message', (e) => {
+  if (!e.data) return;
+  if (e.data.type === 'SKIP_WAITING') self.skipWaiting();
+  if (e.data.type === 'REPAIR') e.waitUntil(repair().then((r) => e.source && e.source.postMessage({ type: 'REPAIRED', version: '0.7.5', ...r })));
+});
+self.addEventListener('fetch', (e) => {
+  const u = new URL(e.request.url);
+  if (e.request.method !== 'GET' || u.origin !== location.origin) return;     // OpenRouter, Google: always live
+  if (u.pathname.endsWith('/version.json')) return;                            // the update check: always live
+  e.respondWith(caches.match(e.request, { ignoreSearch: true }).then((hit) => hit || fetch(e.request).then((r) => {
+    // not in the copy (it was dropped): keep what the server gives, so the copy fills itself again
+    if (r.ok && FILES.some((f) => u.pathname.endsWith('/' + f.replace(/^\.\//, '')) || (f === './' && u.pathname.endsWith('/')))) {
+      const keep = r.clone();
+      caches.open(CACHE).then((c) => c.put(e.request, keep)).catch(() => {});
+    }
+    return r;
+  }).catch(async () => {
+    // no connection and not in the copy: a page load gets the app itself; a file gets a plain error (never the
+    // app's page dressed up as ai-data.json)
+    if (e.request.mode === 'navigate') return (await caches.match('./', { ignoreSearch: true })) || (await caches.match('./index.html')) || Response.error();
+    return Response.error();
+  })));
+});

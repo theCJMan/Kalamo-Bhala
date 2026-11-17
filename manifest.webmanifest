@@ -1,0 +1,17 @@
+{
+  "name": "Kalamo Bhala",
+  "short_name": "Kalamo",
+  "description": "Write anywhere: your Kalamo Bhala library on your phone, on its own or shared with the desktop through Google Drive.",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f6f0e5",
+  "theme_color": "#f6f0e5",
+  "icons": [
+    { "src": "icons/kalamo-256.png", "sizes": "256x256", "type": "image/png" },
+    { "src": "icons/kalamo-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/kalamo-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
