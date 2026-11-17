@@ -20,7 +20,8 @@ match the numbered lists under them. The pictures use a made-up demo book, *The 
 10. [Coming from Raptor Write](#10-coming-from-raptor-write)
 11. [Settings](#11-settings)
 12. [Where your files are, updating, removing](#12-where-your-files-are-updating-removing)
-13. [Troubleshooting](#troubleshooting)
+13. [Kalamo Bhala on your phone (preview)](#13-kalamo-bhala-on-your-phone-preview)
+14. [Troubleshooting](#troubleshooting)
 
 ---
 
@@ -446,6 +447,45 @@ Kalamo uses your browser's own spell check, so the browser must have your langua
 - **Remove:** delete the app folder. Your writing stays in `Documents/MyWritings`.
 - **Stop Kalamo:** the power button at the top right (**Quit**): it saves, stops Kalamo and closes the tab. Closing
   the black (Terminal) window also stops it.
+
+## 13. Kalamo Bhala on your phone (preview)
+
+The phone app is Kalamo Bhala for Android, opened from a web address and added to the home screen. It is a preview:
+it works, but it is new, so keep backups of anything important.
+
+**Install**
+1. On your Android phone, open **Chrome** and go to **[app.kalamobhala.com](https://app.kalamobhala.com)**.
+2. Tap ⋮ (top right) → **Add to home screen** (or **Install app**). Kalamo now opens from its own icon, full screen.
+3. New versions arrive by themselves: a line *A new version of Kalamo Bhala is ready* with a **Reload** button.
+   Settings → **Check for updates** looks straight away.
+
+**First start**
+1. **Where should your writing live?**
+   - **On this phone** (works for everyone): your writing stays in Chrome on this phone. Clearing Chrome's site data
+     for app.kalamobhala.com, or removing Chrome's data for the app, deletes it.
+   - **Google Drive** (invited testers only, for now): the same library as the desktop. Keep the desktop library inside
+     the Google Drive folder on your PC (Google Drive for desktop), sign in on the phone and choose that folder. Changes
+     go both ways; a document changed on both sides keeps both versions ("phone copy"), so nothing is lost. To be added
+     as a tester, open an [issue](../../issues).
+2. **Your AI key:** **Sign in with OpenRouter** (or paste a key). The key stays on the phone. Free models work too.
+
+**Using it**
+- **Projects:** tap a project to open it; **+** for a new one or one of the examples; press and hold for Rename / Delete.
+- **Binder:** ☰ at the top left, or swipe in from the left edge. **Document**, **Folder** and the bin are at the bottom;
+  press and hold a document or folder for its menu (Rename, Move up / down, Delete; a folder also has Import…). The phone's **Back** closes it.
+- **Writing:** type as on paper. Select text for **B**, **I**, **H** and **✦ AI**. Type **/** at the start of a line for
+  Kalamo's commands, your prompts and formats (headings, lists, scene break). The phone's spell checker works as usual.
+- **Chat:** `/chat` opens a chat over the document. Select part of an answer → **Insert in doc**; `/insert` and
+  `/append` put an answer into the document.
+- **Pictures:** `/image` makes a picture with the project's picture style; `/camera` and `/photo` put photos in the document.
+- **Photos of notes or pages:** press and hold a folder → **Import…** → **Photos with the camera**. Take several pages in
+  a row (pinch or 1× 2× 3× to zoom, tap to focus, the grid helps to hold the page straight), check them with the
+  thumbnail next to the shutter, then **Done**. The AI reads them into one document (the cost is shown first).
+- **Gallery and documents:** **Import…** → **Images from the gallery**, or **Documents** (PDF, Word, Excel, PowerPoint,
+  .txt, .md) through the phone's own file picker. Imports run in the background with **Stop**.
+- **No signal?** Writing carries on. The `/` list says *No signal* and leaves out what needs the internet.
+
+**Not yet:** iPhone (not tested), OneDrive or Dropbox, Google Drive for everyone, a Play Store version.
 
 ## Troubleshooting
 

@@ -1,5 +1,12 @@
 # Changes
 
+## Phone app 0.7.5 (17 November 2026, preview)
+
+- **Kalamo Bhala on your phone:** open [app.kalamobhala.com](https://app.kalamobhala.com) in Chrome on Android and add it to the home screen. Projects, binder, editor, the `/` list with your prompts, ✦ AI, a chat over the document, `/image`, the example projects; works without internet and updates itself.
+- **Photos of notes and printed pages:** Kalamo's own camera (zoom, tap to focus, page guide, check the pictures before Done), read by AI into one document; gallery pictures and documents (PDF, Word, Excel, PowerPoint, text) imported in the background.
+- **Storage:** on the phone for everyone; Google Drive shared with the desktop for invited testers while Google reviews the app.
+- The phone app has its own version numbers; the desktop stays at 0.71. Details: [GUIDE.md](GUIDE.md#13-kalamo-bhala-on-your-phone-preview).
+
 ## 0.71 (November 2026)
 
 - **Modes: four levels of complexity (B28):** Choose between *Just Write* (minimal, clean screen), *Writer's Desk* (focused on drafting and revising), *Studio* (expanded tools), and *Book Master* (full feature set with chapter pipeline, worksheet wizard, and detailed trackers). Tucked features remain accessible in a More (⋯) menu on each toolbar. Choose your mode during setup or anytime in Settings → Mode.

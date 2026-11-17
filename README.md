@@ -8,6 +8,17 @@
 > **Kalamo Bhala is free and provided "as is", without guarantees or warranties of any kind.** It is early software: bugs can be expected, and a bug could damage or lose text. **Keep your own backups of your writing.**
 > The AI features send only the text you choose to your chosen AI service; their terms and prices apply.
 
+## Kalamo Bhala on your phone (preview)
+
+**Open [app.kalamobhala.com](https://app.kalamobhala.com) in Chrome on your Android phone**, then ⋮ → **Add to home screen**. Nothing to download from a store; it updates itself (a **Reload** button appears when there is a new version) and keeps working without internet.
+
+- **Write anywhere:** projects, a binder, a quiet editor, word counts, and the four example projects.
+- **AI with your own OpenRouter account:** your prompts in the `/` list and ✦ AI, a chat over the document, `/image` pictures.
+- **Photos of class notes and printed pages:** Kalamo's own camera (zoom, tap to focus, a page guide), read by AI into one document. Also pictures from the gallery and documents (PDF, Word, Excel, PowerPoint, text) through the phone's own file picker.
+- **Storage "On this phone"** works for everyone. Your writing then lives only in Chrome on that phone: clearing Chrome's site data for app.kalamobhala.com deletes it.
+- **Google Drive** (the same library as the desktop, both ways) is **for invited testers only for now**, while Google reviews the app. Want to try it? Open an [issue](../../issues) and ask to be added.
+- Made for Android with Chrome. iPhone has not been tested yet. More in the [guide](GUIDE.md#13-kalamo-bhala-on-your-phone-preview).
+
 ## Get started: step by step
 
 You don't need to know anything about GitHub. This page is just where Kalamo is kept. Follow the steps for your computer.
@@ -84,6 +95,7 @@ All downloads and older versions: [Releases](../../releases).
 - **A chapter-by-chapter workflow** (the Future Fiction Academy's Narrative Physics Engine): a worksheet wizard (with *Fill every empty section* under a budget), then per chapter a plan, a draft, three audits and a final candidate that you accept, with a budget limit.
 - **Four example projects** to look around in: schoolwork, university study, a novel, and office documents (instead of Word).
 - **Rich import:** import PDF (with page range, resume, and AI reading for scanned pages), Word (`.docx` and `.doc`), PowerPoint (`.pptx`), OpenDocument (`.odt`, `.odp`, `.ods`), Excel (`.xlsx`), saved web pages (`.html`), Rich Text (`.rtf`), photos of notes (`.jpg`, `.png`, `.webp`, `.heic`), and Raptor Write backups.
+- **On your phone (preview):** the Android app at [app.kalamobhala.com](https://app.kalamobhala.com): writing, AI prompts and chat, photos of notes read into documents; Google Drive sync with the desktop for invited testers.
 - **Backups and exports:** one-click ZIP backups; export to **Word (`.docx`)**, **OpenDocument (`.odt`)**, **PDF / Print**, Markdown, plain text, or ZIP.
 
 ## Updating and removing
