@@ -1,5 +1,16 @@
 # Changes
 
+## 0.85 (November 2026)
+
+- **Mathematics & LaTeX in the Editor (KaTeX):** Typeset beautiful mathematics with offline KaTeX rendering. Insert display block equations (`$$` or ````math`) and inline formulas (`$...$`) via the toolbar `∑` button, `/math`, or keyboard shortcuts.
+- **Unified Math Commands & Starters:** Access all math workflows from `/math` autocomplete (`/math`, `/geometry`, `/graph`, `/tariff`, `/dictatemath`, `/mathguide`), with an equation starter palette (quadratic, trigonometry, geometry, finance, calculus, integrals, matrices).
+- **Interactive Function Plotter (/drawgraph):** Insert Cartesian function plots with multiple curves, domain/range scaling, asymptotes, coordinates, turning points, and automatic grid rendering in pure SVG.
+- **South African CAPS Curriculum Templates:** Built-in two-column Euclidean Geometry Statement & Reason (`/geometry`) proof tables with angle hats and South African CAPS reasons, plus Municipal Stepped Tariff (`/tariff`) calculation tables with ZAR currency formatting.
+- **Math Voice (Read Aloud & Voice-to-Math Dictation):** Read Aloud (`Alt+A`) speaks math equations naturally in plain pedagogical English instead of raw LaTeX. Voice-to-Math (`/dictatemath`) converts spoken formulas into LaTeX with a real-time visual KaTeX preview, manual edit pause toggle, and clean insertion.
+- **Comprehensive Math & LaTeX Guide in Split View (/mathguide):** Opens a side-by-side reference manual with searchable snippets, South African CAPS curriculum geometry reasons, and a "+ Save copy to project" button to keep an editable guide in your binder.
+- **One-Click Deletion:** One-click `[ Delete ]` buttons on math block, diagram, and graph hover bars, and a `🗑️` button on inline math floating edit pills.
+- **Math Export to Word, OpenDocument, e-book & PDF:** Equations export as crisp, centered 2x vector-sharp images in MS Word (.docx), OpenDocument (.odt), and e-book (.epub), and vector-rendered in browser Print to PDF.
+
 ## Phone app 0.7.5 (17 November 2026, preview)
 
 - **Kalamo Bhala on your phone:** open [app.kalamobhala.com](https://app.kalamobhala.com) in Chrome on Android and add it to the home screen. Projects, binder, editor, the `/` list with your prompts, ✦ AI, a chat over the document, `/image`, the example projects; works without internet and updates itself.

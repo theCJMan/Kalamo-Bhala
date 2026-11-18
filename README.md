@@ -1,4 +1,4 @@
-# Kalamo Bhala - v0.71
+# Kalamo Bhala - v0.85
 
 **A free writing app for long-form work** (novels, books, reports, articles) that runs on your own computer (Windows, Mac or Linux) and opens in your web browser. Your writing is kept as ordinary Markdown files in a folder you choose, so it is never locked in. AI help (continue, revise, chat, summaries, pictures, voice, a chapter-by-chapter workflow) works with your own API key, including free models.
 
@@ -27,13 +27,13 @@ You don't need to know anything about GitHub. This page is just where Kalamo is 
 
 **Step 1. Download.** Click this link: **[⬇ Download Kalamo Bhala for Windows](../../releases/latest/download/Kalamo-Bhala-Windows.zip)** (about 16 MB). Your browser saves the file in your **Downloads** folder.
 
-**Step 2. Find the file.** Open **File Explorer** (the yellow folder on the taskbar) and click **Downloads** on the left. The file is called `Kalamo-Bhala-Windows.zip` (or `Kalamo-Bhala-0.71-Windows.zip`). (In Chrome or Edge you can also click the download arrow at the top right and then the folder icon.)
+**Step 2. Find the file.** Open **File Explorer** (the yellow folder on the taskbar) and click **Downloads** on the left. The file is called `Kalamo-Bhala-Windows.zip` (or `Kalamo-Bhala-0.85-Windows.zip`). (In Chrome or Edge you can also click the download arrow at the top right and then the folder icon.)
 
 **Step 3. Unblock the ZIP before unpacking (recommended on Windows 11).** Right-click the ZIP file → **Properties** → at the bottom next to *Security*, tick **Unblock** → click **OK**. *(Windows marks downloaded ZIP files as coming from the internet; unblocking first clears that tag from the files inside.)*
 
 ![Right-click the ZIP and choose Properties](images/24-zip-properties.png) ![Tick Unblock in Properties and click OK](images/25-zip-unblock.png)
 
-**Step 4. Unpack it.** Right-click the ZIP → **Extract All…** → **Browse…** and choose your **Documents** folder → **Extract**. Windows makes a folder called `Kalamo Bhala 0.71` and opens it. Don't start Kalamo from inside the ZIP without unpacking it: it will not work properly.
+**Step 4. Unpack it.** Right-click the ZIP → **Extract All…** → **Browse…** and choose your **Documents** folder → **Extract**. Windows makes a folder called `Kalamo Bhala 0.85` and opens it. Don't start Kalamo from inside the ZIP without unpacking it: it will not work properly.
 
 **Step 5. Start Kalamo.** In the new folder, double-click **Start Kalamo**.
 
@@ -41,7 +41,7 @@ You don't need to know anything about GitHub. This page is just where Kalamo is 
 - **If you see "Windows protected your PC" (SmartScreen):** click **More info**, then **Run anyway**. *(Kalamo is not signed with a paid certificate, so Windows warns you once.)*
 - **If you see "Smart App Control blocked…" (no "Run anyway" button):**
   1. Make sure you ticked **Unblock** on the ZIP *before* unpacking (Step 3). If you unpacked it first, delete the unpacked folder, Unblock the ZIP, and Extract All again.
-  2. If Smart App Control still blocks `.bat` script files on your PC, start Kalamo directly with the signed Python inside the folder: open the `Kalamo Bhala 0.71` folder, right-click empty space inside the folder → **Open in Terminal**, and run:
+  2. If Smart App Control still blocks `.bat` script files on your PC, start Kalamo directly with the signed Python inside the folder: open the `Kalamo Bhala 0.85` folder, right-click empty space inside the folder → **Open in Terminal**, and run:
      ```powershell
      .\python\python.exe -m kalamo
      ```
@@ -76,7 +76,7 @@ Intel Mac: **[⬇ Mac (Intel)](../../releases/latest/download/Kalamo-Bhala-Mac-I
 
 **Step 2. Unpack it.** Right-click → **Extract Here**, or in a terminal: `tar -xzf Kalamo-Bhala-Linux-x64.tar.gz`.
 
-**Step 3. Start Kalamo.** In a terminal: `cd "Kalamo Bhala 0.71"` and `./start-kalamo.sh` (you can also run `./create-shortcut.sh` for an app menu / desktop icon). Keep the terminal open; your browser opens Kalamo. Then continue at Windows step 8.
+**Step 3. Start Kalamo.** In a terminal: `cd "Kalamo Bhala 0.85"` and `./start-kalamo.sh` (you can also run `./create-shortcut.sh` for an app menu / desktop icon). Keep the terminal open; your browser opens Kalamo. Then continue at Windows step 8.
 
 </details>
 
@@ -89,6 +89,7 @@ All downloads and older versions: [Releases](../../releases).
 
 - **Projects, folders and documents** in a binder; drag to reorder; word counts per folder and project; **version history** (automatic and named snapshots with visual diff & restore).
 - **A clean editor** (bold, italics, headings, lists, scene breaks, **tables** with merged cells, **pictures** with sizing and clipboard paste) on plain Markdown files; autosave; safety copies; **split view** (with Insert at cursor / Append and draggable panes); **find & replace** across a document, folder or project.
+- **Math and diagrams:** inline and display equations with LaTeX/KaTeX, voice math dictation, 2D function graphing, and Mermaid diagrams (flowcharts, sequence, class, state, Gantt) with instant preview and high-resolution export.
 - **Voice:** dictation (browser or AI) in the editor and text boxes; **Read aloud** (computer voices or AI voice); **Talk** mode in chat.
 - **AI with your own key:** your own prompt library (type `/` in the text or chat), Continue / Revise Selection / Go, a **chat** with project word search and `@` references, **AI-generated pictures** (`/image` and project picture styles), **summaries**, rewriting in **past / present / future tense**.
 - **Free to start:** every AI feature starts on `openrouter/free`; pick paid models when you want them. Every run shows its estimated cost before and its actual cost after; nothing is retried behind your back.
@@ -96,7 +97,7 @@ All downloads and older versions: [Releases](../../releases).
 - **Four example projects** to look around in: schoolwork, university study, a novel, and office documents (instead of Word).
 - **Rich import:** import PDF (with page range, resume, and AI reading for scanned pages), Word (`.docx` and `.doc`), PowerPoint (`.pptx`), OpenDocument (`.odt`, `.odp`, `.ods`), Excel (`.xlsx`), saved web pages (`.html`), Rich Text (`.rtf`), photos of notes (`.jpg`, `.png`, `.webp`, `.heic`), and Raptor Write backups.
 - **On your phone (preview):** the Android app at [app.kalamobhala.com](https://app.kalamobhala.com): writing, AI prompts and chat, photos of notes read into documents; Google Drive sync with the desktop for invited testers.
-- **Backups and exports:** one-click ZIP backups; export to **Word (`.docx`)**, **OpenDocument (`.odt`)**, **PDF / Print**, Markdown, plain text, or ZIP.
+- **Backups and exports:** one-click ZIP backups; export to **Word (`.docx`)**, **OpenDocument (`.odt`)**, **PDF / Print**, **EPUB**, Markdown, plain text, or ZIP.
 
 ## Updating and removing
 
